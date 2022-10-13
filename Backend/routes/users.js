@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('../models/user');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
+const config = require('../config/database');
 
 //REGISTER
 router.post('/register', (req,res,next)=>{
@@ -27,15 +28,49 @@ router.post('/register', (req,res,next)=>{
     })
 });
 
-//AUTHENTICATE
-router.get('/authenticate', (req,res,next)=>{
-    res.send('AUTHENTICATE')
+// Authenticate
+router.post('/authenticate', (req,res,next)=>{
+    const username = req.body.username;
+    const password = req.body.password;
+
+    User.getUserByUserName(username, (err, user)=>{
+        if(err) throw err;
+        if(!user){
+            return res.json({success: false, msg: 'User Not Found'})
+        }
+
+        User.comparePassword(password, user.password, (err, isMatch)=>{
+            if(err) throw err;
+            if(isMatch){
+                const token = jwt.sign({data:user}, config.secret, {
+                    expiresIn: 604800 //1 Week
+
+                });
+                res.json({
+                    success:true,
+                    token:`Bearer ${token}`,
+                    user: {
+                        id: user._id,
+                        name: user.firstName + " " + user.lastName,
+                        username: user.username,
+                        email: user.email
+                    }
+                });
+            }
+            else{
+            return res.json({success: false, msg: 'Wrong Password'});
+            }
+        });
+    });
 });
 
 //PROFILE
-router.get('/profile', (req,res,next)=>{
-    res.send('PROFILE')
+router.get('/profile', passport.authenticate('jwt', {session:false}), (req,res,next)=>{
+    res.json({user: req.user});
 });
 
 
 module.exports = router;
+
+// if we want to protect a route, paste this code as second parameter
+//passport.authenticate('jwt', {session:false})
