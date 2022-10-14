@@ -28,11 +28,26 @@ export class AuthService {
     })
   }
 
-  storeUserData(token:any, user:any){
+  getProfile() {
+    this.loadToken();
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.authtoken
+    });
+  
+    return this.http.get('http://localhost:3000/users/profile', {headers: headers});
+  }
+
+  storeUserData(token:any, user:any ){
     localStorage.setItem('id_token', token);
     localStorage.setItem('user', JSON.stringify(user));
     this.authtoken  = token;
     this.user = user;
+  }
+
+  loadToken(){
+    const token = localStorage.getItem('id_token');
+    this.authtoken = token;
   }
 
   logout(){
