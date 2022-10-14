@@ -48,6 +48,21 @@ if(!this.validateService.validateEmail(user.email)){
   this.toastr.error('Please use Valid Email');
     return false;
   }
+   // Register User
+
+   this.authService.registerUser(user).subscribe(
+    data => {
+      if(data.success){
+          this.toastr.success('Account is Created. Please Login');
+          this.router.navigate(['/login']);
+        } 
+      else{
+        this.toastr.warning('Something Went Wrong!!!');
+        this.router.navigate(['/register']);
+
+      }
+    }
+  );
 
 
   }

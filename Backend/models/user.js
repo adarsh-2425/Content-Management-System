@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const config = require('../config/database');
 
-//User Schema
+
 // User Schema
 const UserSchema = mongoose.Schema({
     firstName: {
@@ -38,8 +38,8 @@ module.exports.getUserById = function(id, callback){
     User.find(id, callback);
 }
 
-module.exports.getUserByUserName = function(username, callback){
-    const query = {username: username}
+module.exports.getUserByEmail = function(email, callback){
+    const query = {email: email}
     User.findOne(query, callback);
 }
 

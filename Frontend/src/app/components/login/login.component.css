@@ -1,0 +1,23 @@
+.login{
+    margin: 5%;
+    border: 1px solid green;
+    background-color:lightgreen;
+}
+.page-header{
+    text-align: center;
+    margin: 5%;
+}
+.loginform{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    
+}
+.form-group{
+    margin: 5%;
+    
+}
+
+.button{
+    margin: 5%;
+}
