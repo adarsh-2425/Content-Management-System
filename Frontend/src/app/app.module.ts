@@ -14,11 +14,14 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { AuthService } from './services/auth.service';
 import { ValidateService } from './services/validate.service'
+import { UsersService } from './services/users.service';
 import { AuthGuard } from './services/auth.guard';
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { AdminManageComponent } from './components/admin-manage/admin-manage.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { ToastrModule } from 'ngx-toastr';
     NavbarComponent,
     HomeComponent,
     ProfileComponent,
-    DashboardComponent
+    DashboardComponent,
+    AdminManageComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,12 @@ import { ToastrModule } from 'ngx-toastr';
       closeButton: true
     }),
   ],
-  providers: [ValidateService,AuthGuard,AuthService],
+  providers: [
+    ValidateService,
+    AuthGuard,
+    AuthService,
+    UsersService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -15,6 +15,12 @@ const UserSchema = mongoose.Schema({
     gender: {
         type: String
     },
+    
+    role: {
+        type: String,
+        default:'user'
+        
+    },
     email: {
         type: String,
         required: true
@@ -42,6 +48,8 @@ module.exports.getUserByEmail = function(email, callback){
     const query = {email: email}
     User.findOne(query, callback);
 }
+
+
 
 module.exports.addUser = function(newUser,callback){
     bcrypt.genSalt(10, (err,salt)=>{

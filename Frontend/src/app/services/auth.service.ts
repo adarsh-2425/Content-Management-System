@@ -10,6 +10,7 @@ export class AuthService {
 
   authtoken: any;
   user: any;
+ 
 
   
 
@@ -41,7 +42,7 @@ export class AuthService {
     return this.http.get('http://localhost:3000/users/profile', {headers: headers});
   }
 
-  storeUserData(token:any, user:any ){
+  storeUserData(token:any, user:any){
     localStorage.setItem('id_token', token);
     localStorage.setItem('user', JSON.stringify(user));
     this.authtoken  = token;

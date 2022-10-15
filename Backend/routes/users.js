@@ -28,6 +28,35 @@ router.post('/register', (req,res,next)=>{
     })
 });
 
+//Show list of users
+router.get('/userlist',function(req,res){
+    User.find()
+                    .then(function(users){
+                        res.send(users);
+                    });   
+});
+
+router.put('/updateuser',(req,res)=>{
+    
+    
+    
+    id=req.body._id,
+    role = req.body.role,
+   User.findByIdAndUpdate({"_id":id},
+                                {$set:{"role":role}})
+   .then(function(){
+       res.send();
+   })
+ })
+
+ router.get('/:id',  (req, res) => {
+    
+      User.findById(req.params.id)
+      .then((user)=>{
+          res.send(user);
+      });
+  })
+
 // Authenticate
 router.post('/authenticate', (req,res,next)=>{
     const email = req.body.email;
@@ -69,6 +98,8 @@ router.get('/profile', passport.authenticate('jwt', {session:false}), (req,res,n
      res.json(req.user[0]);
      
 });
+
+
 
 
 module.exports = router;
