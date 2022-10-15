@@ -17,7 +17,7 @@ export class EditUserComponent implements OnInit {
   constructor(private router:Router,private userService: UsersService) { }
 
   ngOnInit(): void {
-    let userId = localStorage.getItem("editBookId");
+    let userId = localStorage.getItem("editUserId");
     this.userService.getUser(userId).subscribe((data)=>{
       this.user=JSON.parse(JSON.stringify(data));
   })
@@ -27,6 +27,7 @@ editUser()
 {    
   this.userService.editUser(this.user);   
   alert("Success");
+  localStorage.removeItem("editUserId");
   this.router.navigate(['dashboard']);
 }
 }

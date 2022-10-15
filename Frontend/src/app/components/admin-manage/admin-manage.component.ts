@@ -21,7 +21,7 @@ export class AdminManageComponent implements OnInit {
   }
 
   promote(user:any){
-    localStorage.setItem("editBookId", user._id.toString());
+    localStorage.setItem("editUserId", user._id.toString());
     this.router.navigate(['/edituser']);
     
   }
