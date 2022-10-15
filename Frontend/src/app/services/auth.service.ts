@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { JwtHelperService } from "@auth0/angular-jwt";
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,8 @@ export class AuthService {
 
   authtoken: any;
   user: any;
+
+  
 
   constructor(private http:HttpClient) { }
 
@@ -48,6 +51,11 @@ export class AuthService {
   loadToken(){
     const token = localStorage.getItem('id_token');
     this.authtoken = token;
+  }
+
+  loggedIn()
+  {
+    return !!localStorage.getItem('id_token')
   }
 
   logout(){

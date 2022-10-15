@@ -14,6 +14,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { AuthService } from './services/auth.service';
 import { ValidateService } from './services/validate.service'
+import { AuthGuard } from './services/auth.guard';
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -40,7 +42,7 @@ import { ToastrModule } from 'ngx-toastr';
       closeButton: true
     }),
   ],
-  providers: [ValidateService,AuthService],
+  providers: [ValidateService,AuthGuard,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
