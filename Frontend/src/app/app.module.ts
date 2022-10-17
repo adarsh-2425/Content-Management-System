@@ -43,7 +43,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
       preventDuplicates: true,
-      timeOut: 5000,
+      timeOut: 1500,
       closeButton: true
     }),
   ],

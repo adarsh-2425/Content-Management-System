@@ -50,8 +50,8 @@ router.put('/updateuser',(req,res)=>{
  })
 
  router.get('/:id',  (req, res) => {
-    
-      User.findById(req.params.id)
+      
+    User.findById(req.params.id)
       .then((user)=>{
           res.send(user);
       });
