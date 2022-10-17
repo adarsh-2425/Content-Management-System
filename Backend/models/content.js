@@ -23,6 +23,9 @@ const ContentSchema = mongoose.Schema({
     downVote: {
         type: Number
     }
+},
+{
+    timestamps: true
 });
 
 const Content = module.exports = mongoose.model('content', ContentSchema);
