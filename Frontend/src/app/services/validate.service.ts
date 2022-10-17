@@ -8,7 +8,7 @@ export class ValidateService {
   constructor() { }
 
   validateRegister(user:any){
-    if(user.firstName == "" || user.lastName == "" || user.gender == "" || user.phone == "" ||user.email == "" || user.password == "")
+    if(user.firstName == "" || user.phone == "" ||user.email == "" || user.password == "")
       return false;
       else{
         return true;
@@ -16,7 +16,7 @@ export class ValidateService {
   } 
 
   validateEmail(email:any){
-    const regex = /^([A-Za-z0-9\-.]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/;
+    const regex = /^([A-Za-z0-9\-._=&<>,+]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/;
     return regex.test(email);
   }
   

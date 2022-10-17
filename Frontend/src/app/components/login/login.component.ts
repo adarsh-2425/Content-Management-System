@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     .subscribe(
       data => {
         if(data.success){
-          this.authService.storeUserData(data.token, data.user);
+          this.authService.storeUserData(data.token, data.user, data.role);
           this.toastr.success('Login Successful');
           this.router.navigate(['dashboard']);
         }

@@ -14,12 +14,10 @@ const UserSchema = mongoose.Schema({
     },
     gender: {
         type: String
-    },
-    
+    }, 
     role: {
         type: String,
-        default:'user'
-        
+        default:'user'  
     },
     email: {
         type: String,
@@ -27,6 +25,7 @@ const UserSchema = mongoose.Schema({
     },
     phone: {
         type: Number,
+        required: true
     },
     username: {
         type: String,
