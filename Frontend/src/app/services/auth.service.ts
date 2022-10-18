@@ -13,9 +13,6 @@ export class AuthService {
   role: any;
   username:any;
  
-
-  
-
   constructor(private http:HttpClient) { }
 
   registerUser(user: any) {

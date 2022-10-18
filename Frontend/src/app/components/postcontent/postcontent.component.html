@@ -4,23 +4,23 @@
         <p>Draft in {{username}}</p>
     </div>
     <div class="col">
-        <button type="submit" id="button" form="a-form"  [disabled]="!stories.form.valid">Publish</button>
+        <button type="submit" id="button" value="Submit" form="a-form">Publish</button>
       </div>
       
 </div>
 
-<form action="" id="a-form" #stories = ngForm>
+<form (ngSubmit)="onContentSubmit()" id="a-form" #stories = ngForm>
     <div class="form-group">
         <label for="title"></label>
-        <input type="text" name="title" id="title" class="form-control" placeholder="Title" required>
+        <input type="text" name="title" [(ngModel)]="title" id="title" class="form-control" placeholder="Title" required>
     </div>
     <div class="form-group">
         <label for="title"></label>
-        <input type="url" name="story" id="story" class="form-control" cols="20" rows="10" placeholder="Image URL" required>
+        <input type="url" name="image" id="image" [(ngModel)]="image" class="form-control" cols="20" rows="10" placeholder="Image URL" required>
     </div> 
     <div class="form-group">
         <label for="title"></label>
-        <textarea name="story" id="story" class="form-control" cols="20" rows="10" placeholder="Tell your story..." required></textarea>
+        <textarea name="story" id="story" class="form-control" [(ngModel)]="post" cols="20" rows="10" placeholder="Tell your story..." required></textarea>
     </div> 
     
 </form>

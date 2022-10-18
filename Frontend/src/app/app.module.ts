@@ -15,6 +15,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthService } from './services/auth.service';
 import { ValidateService } from './services/validate.service'
 import { UsersService } from './services/users.service';
+import { ContentService } from './services/content.service';
 import { AuthGuard } from './services/auth.guard';
 
 
@@ -53,7 +54,8 @@ import { PostcontentComponent } from './components/postcontent/postcontent.compo
     ValidateService,
     AuthGuard,
     AuthService,
-    UsersService
+    UsersService,
+    ContentService
   ],
   bootstrap: [AppComponent]
 })

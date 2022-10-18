@@ -15,6 +15,14 @@ export class ValidateService {
       }
   } 
 
+  validateContent(content:any){
+    if(content.title == "" || content.post == "")
+      return false;
+      else{
+        return true;
+      }
+  } 
+
   validateEmail(email:any){
     const regex = /^([A-Za-z0-9\-._=&<>,+]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/;
     return regex.test(email);
