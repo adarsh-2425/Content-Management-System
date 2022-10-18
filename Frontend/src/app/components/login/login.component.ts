@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { ValidateService } from 'src/app/services/validate.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService:AuthService,
+    private validateService: ValidateService,
     private router:Router,
     private toastr: ToastrService,
   ) { }
@@ -27,6 +29,11 @@ export class LoginComponent implements OnInit {
     const user = {
       email: this.email,
       password: this.password
+    }
+
+    if(!this.validateService.validateLogin(user)){
+      this.toastr.error('Please Fill in all fields');
+      return false;
     }
 
     this.authService.authenticateUser(user)

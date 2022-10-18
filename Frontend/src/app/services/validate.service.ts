@@ -15,6 +15,14 @@ export class ValidateService {
       }
   } 
 
+  validateLogin(user:any){
+    if(user.email == "" || user.password == "")
+      return false;
+      else{
+        return true;
+      }
+  }
+
   validateContent(content:any){
     if(content.title == "" || content.post == "")
       return false;
