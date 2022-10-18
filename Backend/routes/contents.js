@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const Content = require('../models/content');
+const passport = require('passport');
+const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 
 // Post Contents To The Blog
-router.post('/postcontent', (req, res)=>{
+router.post('/postcontent', passport.authenticate('jwt', {session:false}), (req, res)=>{
     let newContent = new Content({
         authorName: req.body.authorName,
         category: req.body.category,

@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AdminManageComponent } from './components/admin-manage/admin-manage.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { PostcontentComponent } from './components/postcontent/postcontent.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     ProfileComponent,
     DashboardComponent,
     AdminManageComponent,
-    EditUserComponent
+    EditUserComponent,
+    PostcontentComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ export class AuthService {
   authtoken: any;
   user: any;
   role: any;
+  username:any;
  
 
   
@@ -39,17 +40,18 @@ export class AuthService {
       'Content-Type': 'application/json',
       'Authorization': this.authtoken
     });
-  
     return this.http.get('http://localhost:3000/users/profile', {headers: headers});
   }
 
-  storeUserData(token:any, user:any, role:any){
+  storeUserData(token:any, user:any, role:any, username:any){
     localStorage.setItem('id_token', token);
     localStorage.setItem('user', JSON.stringify(user));
     localStorage.setItem('role', user.role);
+    localStorage.setItem('username', user.username);
     this.authtoken  = token;
     this.user = user;
     this.role = role;
+    this.username = username;
   }
 
   loadToken(){

@@ -5,6 +5,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { PostcontentComponent } from './components/postcontent/postcontent.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './services/auth.guard';
@@ -24,14 +25,19 @@ const routes: Routes = [
   component : ProfileComponent
   },
   {
-    path : 'adminManage', 
+  path : 'adminManage', 
   canActivate: [AuthGuard],
   component : AdminManageComponent
   },
   {
-    path : 'edituser', 
-   canActivate: [AuthGuard],
-    component : EditUserComponent
+  path : 'edituser', 
+  canActivate: [AuthGuard],
+  component : EditUserComponent
+  },
+  {
+  path : 'postcontent', 
+  canActivate: [AuthGuard],
+  component : PostcontentComponent
   }
 ];
 
