@@ -6,10 +6,11 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 
 // Post Contents To The Blog
-router.post('/postcontent', passport.authenticate('jwt', {session:false}), (req, res)=>{
+router.post('/postcontent', (req, res)=>{
     let newContent = new Content({
         authorName: req.body.authorName,
         category: req.body.category,
+        title: req.body.title,
         post: req.body.post,
         image: req.body.image,
         upVote: req.body.upVote,

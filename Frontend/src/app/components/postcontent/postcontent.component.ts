@@ -34,7 +34,8 @@ export class PostcontentComponent implements OnInit {
     const content = {
       title: this.title,
       image: this.image,
-      post: this.image
+      post: this.image,
+      authorName: this.username
     }
     if(!this.validateService.validateContent(content)){
       this.toastr.error('You did not write any stories!!');

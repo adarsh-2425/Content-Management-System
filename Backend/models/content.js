@@ -10,6 +10,10 @@ const ContentSchema = mongoose.Schema({
         type: String,
         require: true
     },
+    title: {
+        type:String,
+        require: true
+    },
     post: {
         type: String,
         require: true

@@ -47,7 +47,8 @@ import { PostcontentComponent } from './components/postcontent/postcontent.compo
     ToastrModule.forRoot({
       preventDuplicates: true,
       timeOut: 1500,
-      closeButton: true
+      closeButton: true,
+  
     }),
   ],
   providers: [

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { ContentService } from 'src/app/services/content.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -12,6 +13,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     public authService:AuthService,
+    public contentService:ContentService,
     private router:Router,
     private toastr: ToastrService,
   ) { }
