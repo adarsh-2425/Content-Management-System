@@ -10,7 +10,8 @@
 .loginform{
     display: block;
     justify-content: center;
-    align-items: center;   
+    align-items: center;  
+    
 }
 .form-group{
     margin: 5%;  
