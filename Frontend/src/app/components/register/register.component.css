@@ -1,7 +1,53 @@
+.body{
+    background-image: url("https://source.unsplash.com/lJku4edK_cs/600x300");
+}
 .page-header{
     text-align: center;
-    margin: 25px;
+   padding: 10px;
 }
 .form-group{
     padding: 5px;
 }
+.btn{
+    margin: 0 auto;
+    display: block;
+}
+
+#already{
+    text-decoration: none;
+    text-align: center;
+}
+.container{
+    width: 50%;
+}
+.card{
+    padding: 5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

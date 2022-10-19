@@ -1,4 +1,5 @@
-<div class="login">
+<div class="container">
+<div class="login" [ngStyle]="{'background': 'url(' + backgroundUrl + ')   0 / cover'}" >
 
     <h2 class="page-header">Login</h2>
     <form class="loginform" (ngSubmit)="onLoginSubmit()">
@@ -14,4 +15,6 @@
         <input type="submit" class="btn btn-primary" value="Login">
     </div>
     </form>
+    <a id="already" routerLink="/register">Feel Free to Create a Account</a>
     </div>
+</div>

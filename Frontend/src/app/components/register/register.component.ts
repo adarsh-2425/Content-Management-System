@@ -9,6 +9,9 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  
+  backgroundUrl=" https://source.unsplash.com/YkA7CLrMg8g"
+  
   firstName:string = '';
   lastName:string = '';
   gender:string = "";
@@ -16,6 +19,7 @@ export class RegisterComponent implements OnInit {
   phone:string = "";
   username:string = '';
   password:string = '';
+  repeatPassword:string = '';
   
   constructor(
     private toastr: ToastrService,
@@ -35,7 +39,8 @@ export class RegisterComponent implements OnInit {
       phone: this.phone,
       email: this.email,
       username: this.email,
-      password: this.password
+      password: this.password,
+      repeatPassword: this.repeatPassword
     }
 
      // required fields
@@ -47,7 +52,13 @@ export class RegisterComponent implements OnInit {
 if(!this.validateService.validateEmail(user.email)){
   this.toastr.error('Please use Valid Email');
     return false;
-  }
+}
+// retype password
+if(!this.validateService.repeatPassword(user)){
+  this.toastr.error('Passwords Did Not Match');
+  return false;
+}
+
    // Register User
 
    this.authService.registerUser(user).subscribe(

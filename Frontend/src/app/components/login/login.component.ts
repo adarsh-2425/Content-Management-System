@@ -11,6 +11,10 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent implements OnInit {
 
+  backgroundUrl="https://source.unsplash.com/-4qhiC6RmQw"
+  
+ 
+
   email:string = '';
   password:string = '';
 

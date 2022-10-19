@@ -15,6 +15,14 @@ export class ValidateService {
       }
   } 
 
+  repeatPassword(user:any){
+    if(user.password === user.repeatPassword)
+      return true;
+      else{
+        return false;
+    }
+  }
+
   validateLogin(user:any){
     if(user.email == "" || user.password == "")
       return false;
