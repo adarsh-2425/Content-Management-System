@@ -34,7 +34,7 @@ export class PostcontentComponent implements OnInit {
     const content = {
       title: this.title,
       image: this.image,
-      post: this.image,
+      post: this.post,
       authorName: this.username
     }
     if(!this.validateService.validateContent(content)){

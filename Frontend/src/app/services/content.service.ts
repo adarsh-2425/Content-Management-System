@@ -15,4 +15,8 @@ export class ContentService {
       headers
     })
   }
+
+  getContent(){
+    return this.http.get('http://localhost:3000/contents/viewcontent')
+  }
 }
