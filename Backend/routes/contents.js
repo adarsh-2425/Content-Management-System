@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Content = require('../models/content');
-const passport = require('passport');
-const jwt = require('jsonwebtoken');
-const config = require('../config/database');
+
+
 
 // Post Contents To The Blog
 router.post('/postcontent', (req, res)=>{
@@ -37,5 +36,26 @@ router.get('/viewcontent', (req,res)=>{
         if(err) throw err;
     });
 });
+
+// View Contents By the Author
+// https://www.baeldung.com/mongodb-get-value-by-key-name
+router.get('/usercontent/:username', (req,res)=>{
+    username = req.params.username;
+    Content.find({"authorName" : username})
+    .then(function(contents,err){
+        res.send(contents);
+        if(err) throw err;
+    });
+});
+
+// Delete Contents From The Blog
+router.delete('/delete/:id',(req,res)=>{
+    id = req.params.id;
+    Content.findByIdAndDelete({"_id":id})
+    .then(()=>{
+        console.log('Deletion success')
+        res.send();
+    })
+})
 
 module.exports = router;
