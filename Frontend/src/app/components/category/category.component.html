@@ -1,18 +1,22 @@
 <div class="container">
     <section class="enterCategory">
-    <form action="">
+    <form (ngSubmit)=" addCategory()">
         <div class="form-group">
-            <label for="category">Enter Category</label>
-            <input type="text" name="category" id="category">
+            <label class="fw-bold" for="category">Enter Category :</label>
+            <input class="border border-danger" [(ngModel)]="category" type="text" name="category" id="category">
+            <input type="submit" class="btn btn-danger">
         </div>
     </form>
 </section>
 <section class="viewCategory">
 <div class="row">
-    <div class="col-md-4 mb-4  " *ngFor="let Category of Categories">
+    <div class="col-md-3 mb-4  " *ngFor="let Category of Categories">
         <div class="card bg-success text-white">
             <div class="card-body">
                 <h5 class="card-title">{{Category.category}}</h5>
+                <div class="delete">
+                        <i (click)="deleteCategory(Category)" class="fa fa-solid fa-trash-can"></i>
+                </div>
             </div>
         </div>
     </div>

@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Category = require('../models/category');
 
+
+
 // Add Category
 router.post('/addcategory',(req,res)=>{
     let newCategory = new Category({
@@ -26,6 +28,16 @@ router.get('/viewcategory',(req,res)=>{
         if (err) throw err;
     })
     
-})
+});
+
+// Delete Category
+router.delete('/remove/:id',(req,res)=>{
+    const id = req.params.id;
+    Category.findByIdAndDelete({"_id": id})
+    .then(()=>{
+        console.log('Deletion Success');
+        res.send();
+    })
+});
 
 module.exports = router;

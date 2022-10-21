@@ -17,4 +17,12 @@ export class CategoryService {
     return this.http.get(`${this.server_address}/categories/viewcategory`)
   }
 
+  addCategory(Category:any){
+    return this.http.post<any>(`${this.server_address}/categories/addcategory`, Category)
+  }
+
+  deleteCategory(id:any){
+    return this.http.delete(`${this.server_address}/categories/remove/`+id);
+  }
+
 }

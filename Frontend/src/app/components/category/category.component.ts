@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/services/category.service';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-category',
@@ -9,9 +11,12 @@ import { CategoryService } from 'src/app/services/category.service';
 export class CategoryComponent implements OnInit {
 
   Categories:any[] | undefined;
+  category:any = '';
 
   constructor(
-    private CategoryService:CategoryService
+    private CategoryService:CategoryService,
+    private toastr: ToastrService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -21,4 +26,40 @@ export class CategoryComponent implements OnInit {
     })
   }
 
+  addCategory(){
+    const Category = {
+      category: this.category
+    }
+    this.CategoryService.addCategory(Category).subscribe(
+      data => {
+        if(data.success){
+          this.toastr.success('Category added')
+          // Refresh a component in angular
+          //  this.ngOnInit();
+          this.ngOnInit();
+        }
+        else{
+          this.toastr.error("Something Went Wrong!")
+        }
+      }
+    )
+  }
+
+  deleteCategory(category:any){
+    if (confirm('Are you sure you want to delete this?')) {
+    this.CategoryService.deleteCategory(category._id).subscribe(
+      data=>{
+        this.Categories = this.Categories?.filter(c => c!= category);
+        this.toastr.error(`${category.category} deleted`);
+            })
+  }};
+
+  check(){
+    console.log('Check ok');
+    
+  }
+
 }
+
+// Refresh a component in angular
+//  this.ngOnInit();
