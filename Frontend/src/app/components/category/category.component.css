@@ -17,4 +17,5 @@
 }
 .fa:hover{
     color: red;
+    transform:rotate(10deg);
 }
