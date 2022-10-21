@@ -3,9 +3,11 @@
     <div class="col draft">
         <p>Draft in {{username}}</p>
     </div>
-    <div class="col">
-        <button type="submit" id="button" value="Submit" form="a-form">Publish</button>
-      </div>
+        <div class="col-sm-12 text-center">
+        <button class="btn btn-success" type="submit"  id="button" value="Submit" form="a-form">Save Changes</button>
+        <button class="btn btn-warning" type="reset" (click)="resetContent()" id="button" value="reset" form="a-form">Reset</button>
+        <button class="btn btn-danger" type="button" (click)="discard()" id="button" value="discard" form="a-form">Discard Changes</button>
+    </div>
       
 </div>
 
@@ -26,6 +28,10 @@
     <div class="form-group">
         <label for="image"></label>
         <input type="url" name="image" id="image" [(ngModel)]="image" class="form-control" cols="20" rows="10" placeholder="Image URL">
+    
+        <div class="img">
+            <img [src]="image" class="img-fluid" alt="Image">
+        </div>
     </div> 
     <div class="form-group">
         <label for="post"></label>

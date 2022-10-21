@@ -13,13 +13,15 @@
 }
 
 #button{
-    background-color: #04AA6D;
     border-radius: 10%;
     border: none;
     color: white;
     cursor: pointer;
     padding: 10px 20px;
-    margin-left: 60%;
+    margin: 5px;
+    margin-bottom: 2em;
+    display: inline-block;
+    vertical-align: top;
 }
 #button:hover{
     background-color: rgb(3, 53, 3);
@@ -29,4 +31,7 @@
 .invalid{
     color:red;
     font-size: 14px;
+}
+.form-group{
+    padding: 1em;
 }

@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,11 @@ export class ContentService {
 
   server_address= "http://localhost:3000"
 
-  constructor(private http:HttpClient) { }
+  constructor(
+    private http:HttpClient,
+    private toastr: ToastrService,
+    private router: Router
+    ) { }
 
   postContent(story:any){
     let headers = new HttpHeaders()
@@ -39,6 +45,15 @@ export class ContentService {
 
   deleteContent(id:any){
     return this.http.delete(`${this.server_address}/contents/delete/`+id)
+  }
+
+  resetContent(){
+    this.toastr.info('Reset Done')
+  }
+
+  discard(){
+    this.toastr.info("Changes Discarded");
+    this.router.navigate(['/dashboard'])
   }
 
 }

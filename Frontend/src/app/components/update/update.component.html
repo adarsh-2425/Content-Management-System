@@ -1,13 +1,12 @@
 <div class="container">
     <div class="row">
     <div class="col draft">
-        <p>Draft in {{Contents.authorName}}</p>
+        <p>Draft in <strong>{{Contents.authorName}}</strong></p>
     </div>
-    <div class="col">
-        <button type="submit"  id="button" value="Submit" form="a-form">Save Changes</button>
-        <button type="reset" (click)="resetContent()" id="button" value="reset" form="a-form">Reset</button>
-        <button type="button" (click)="discard()" id="button" value="discard" form="a-form">Discard Changes</button>
-
+    <div class="col-sm-12 text-center">
+        <button class="btn btn-success" type="submit"  id="button" value="Submit" form="a-form">Save Changes</button>
+        <button class="btn btn-warning" type="reset" (click)="resetContent()" id="button" value="reset" form="a-form">Reset</button>
+        <button class="btn btn-danger" type="button" (click)="discard()" id="button" value="discard" form="a-form">Discard Changes</button>
     </div>
       
 </div>

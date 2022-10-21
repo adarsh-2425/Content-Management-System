@@ -20,7 +20,7 @@ export class PostcontentComponent implements OnInit {
   
 
   constructor(
-    private contentService:ContentService,
+    private ContentService:ContentService,
     private validateService:ValidateService,
     private toastr: ToastrService,
     private router: Router
@@ -42,7 +42,7 @@ export class PostcontentComponent implements OnInit {
       return false;
     }
 
-    this.contentService.postContent(content).subscribe(
+    this.ContentService.postContent(content).subscribe(
       data =>{
         if(data.success){
           this.toastr.success('Post is Successfully Published!');
@@ -54,6 +54,15 @@ export class PostcontentComponent implements OnInit {
       }
     )
     
+  }
+
+  resetContent(){
+    this.ContentService.resetContent();
+    this.router.navigate(['/postcontent']);
+  }
+
+  discard(){
+    this.ContentService.discard();
   }
 
 }

@@ -41,13 +41,13 @@ Contents = {
   }
 
   resetContent(){
-    this.toastr.info('Reset Done')
+    this.ContentService.resetContent();
     this.router.navigate(['/updatecontent']);
+
   }
 
   discard(){
-    this.toastr.info("Changes Discarded");
-    this.router.navigate(['/dashboard'])
+    this.ContentService.discard();
   }
 
 }
