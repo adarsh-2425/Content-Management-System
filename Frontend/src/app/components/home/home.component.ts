@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   constructor(private ContentService:ContentService) { }
 
   ngOnInit(): void {
-    this.ContentService.getContent().subscribe((data)=>{
+    this.ContentService.getContents().subscribe((data)=>{
       this.contents = JSON.parse(JSON.stringify(data))
     });
   }

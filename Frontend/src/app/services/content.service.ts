@@ -18,12 +18,23 @@ export class ContentService {
     })
   }
 
-  getContent(){
+  getContent(id:any){
+    return this.http.get(`${this.server_address}/contents/`+id)
+  }
+
+  getContents(){
     return this.http.get(`${this.server_address}/contents/viewcontent`)
   }
 
   getUserContent(username:any){
     return this.http.get(`${this.server_address}/contents/usercontent/`+username)
+  }
+
+  updateContent(content:any){
+    return this.http.put(`${this.server_address}/contents/updatecontent`,content)
+    .subscribe(data => {
+      console.log(data);  
+    })
   }
 
   deleteContent(id:any){

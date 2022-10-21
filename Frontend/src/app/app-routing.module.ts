@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { PostcontentComponent } from './components/postcontent/postcontent.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
+import { UpdateComponent } from './components/update/update.component';
 import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
@@ -38,6 +39,11 @@ const routes: Routes = [
   path : 'postcontent', 
   canActivate: [AuthGuard],
   component : PostcontentComponent
+  },
+  {
+    path : 'updatecontent',
+    canActivate: [AuthGuard],
+    component : UpdateComponent
   }
 ];
 

@@ -24,6 +24,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AdminManageComponent } from './components/admin-manage/admin-manage.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { PostcontentComponent } from './components/postcontent/postcontent.component';
+import { UpdateComponent } from './components/update/update.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PostcontentComponent } from './components/postcontent/postcontent.compo
     DashboardComponent,
     AdminManageComponent,
     EditUserComponent,
-    PostcontentComponent
+    PostcontentComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,25 @@
+#title{
+    font-size:xx-large;
+}
+
+.draft{
+    font-weight: light;
+}
+
+.row{
+    margin-top: 1rem;
+}
+
+#button{
+    background-color: #04AA6D;
+    border-radius: 10%;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-left: 60%;
+}
+#button:hover{
+    background-color: rgb(3, 53, 3);
+    color: white
+}

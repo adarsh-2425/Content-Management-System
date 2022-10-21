@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+    <div class="col draft">
+        <p>Draft in {{Contents.authorName}}</p>
+    </div>
+    <div class="col">
+        <button type="submit" (ngSubmit)="editContent()" id="button" value="Submit" form="a-form">Save Changes</button>
+        <button type="reset" (click)="resetContent()" id="button" value="reset" form="a-form">Reset</button>
+        <button type="button" (click)="discard()" id="button" value="discard" form="a-form">Discard Changes</button>
+
+    </div>
+      
+</div>
+
+<form  id="a-form" #stories = ngForm>
+    <div class="form-group">
+        <label for="title"></label>
+        <input type="text" name="title" [(ngModel)]="Contents.title" id="title" class="form-control" placeholder="Title" required>
+    </div>
+    <div class="form-group">
+        <label for="image"></label>
+        <input type="url" name="image" id="image" [(ngModel)]="Contents.image" class="form-control" cols="20" rows="10" placeholder="Image URL">
+    </div> 
+    <div class="form-group">
+        <label for="post"></label>
+        <textarea name="post" id="post" class="form-control" [(ngModel)]="Contents.post" cols="20" rows="10" placeholder="Tell your story..." required></textarea>
+    </div> 
+    
+</form>
+</div>
+

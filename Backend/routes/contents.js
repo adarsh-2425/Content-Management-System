@@ -3,6 +3,14 @@ const router = express.Router();
 const Content = require('../models/content');
 
 
+router.get(`/:id`, (req,res)=>{
+    const id = req.params.id;
+    Content.findOne({"_id":id})
+    .then((content)=>{
+        res.send(content);
+    })
+})
+
 
 // Post Contents To The Blog
 router.post('/postcontent', (req, res)=>{
@@ -45,6 +53,25 @@ router.get('/usercontent/:username', (req,res)=>{
     .then(function(contents,err){
         res.send(contents);
         if(err) throw err;
+    });
+});
+
+// Update Content
+router.put('/updatecontent',(req,res)=>{
+    id = req.body._id,
+    title = req.body.title,
+    image = req.body.image,
+    post = req.body.image,
+    Content.findByIdAndUpdate({"_id":id},
+    {
+        $set:{
+            "title":title,
+            "image":image,
+            "post":post
+        }
+    })
+    .then(function(){
+        res.send();
     });
 });
 

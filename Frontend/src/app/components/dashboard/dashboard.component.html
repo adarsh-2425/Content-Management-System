@@ -8,7 +8,7 @@
 
           <p class="card-text">{{content.post}}</p>
         </div>
-        <button class="btn btn-primary" style="cursor:pointer" > Update</button>
+          <button class="btn btn-primary" (click)="updateContent(content)" style="cursor:pointer" > Update</button>
           <button class="btn btn-danger"  (click)="delete(content)" style="cursor:pointer" > Delete</button>
         <div class="card-footer bg-transparent border-success">
           
