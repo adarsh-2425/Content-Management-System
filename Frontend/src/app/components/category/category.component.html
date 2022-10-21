@@ -1,0 +1,21 @@
+<div class="container">
+    <section class="enterCategory">
+    <form action="">
+        <div class="form-group">
+            <label for="category">Enter Category</label>
+            <input type="text" name="category" id="category">
+        </div>
+    </form>
+</section>
+<section class="viewCategory">
+<div class="row">
+    <div class="col-md-4 mb-4  " *ngFor="let Category of Categories">
+        <div class="card bg-success text-white">
+            <div class="card-body">
+                <h5 class="card-title">{{Category.category}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+</div>

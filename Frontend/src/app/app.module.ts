@@ -16,6 +16,7 @@ import { AuthService } from './services/auth.service';
 import { ValidateService } from './services/validate.service'
 import { UsersService } from './services/users.service';
 import { ContentService } from './services/content.service';
+import { CategoryService } from './services/category.service';
 import { AuthGuard } from './services/auth.guard';
 
 
@@ -25,6 +26,7 @@ import { AdminManageComponent } from './components/admin-manage/admin-manage.com
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { PostcontentComponent } from './components/postcontent/postcontent.component';
 import { UpdateComponent } from './components/update/update.component';
+import { CategoryComponent } from './components/category/category.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { UpdateComponent } from './components/update/update.component';
     AdminManageComponent,
     EditUserComponent,
     PostcontentComponent,
-    UpdateComponent
+    UpdateComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,8 @@ import { UpdateComponent } from './components/update/update.component';
     AuthGuard,
     AuthService,
     UsersService,
-    ContentService
+    ContentService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })

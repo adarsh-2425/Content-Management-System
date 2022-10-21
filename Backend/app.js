@@ -23,6 +23,7 @@ const app = express();
 
 const users = require('./routes/users');
 const contents = require('./routes/contents');
+const categories = require('./routes/categories');
 
 const port = 3000;
 
@@ -51,6 +52,7 @@ require('./config/passport')(passport);
 
 app.use('/users', users);
 app.use('/contents', contents);
+app.use('/categories', categories);
 
 // Index Route
 app.get('/', (req,res)=>{

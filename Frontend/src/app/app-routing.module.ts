@@ -9,6 +9,7 @@ import { PostcontentComponent } from './components/postcontent/postcontent.compo
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UpdateComponent } from './components/update/update.component';
+import { CategoryComponent } from './components/category/category.component';
 import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
@@ -44,6 +45,11 @@ const routes: Routes = [
     path : 'updatecontent',
     canActivate: [AuthGuard],
     component : UpdateComponent
+  },
+  {
+    path : 'category',
+    canActivate: [AuthGuard],
+    component : CategoryComponent
   }
 ];
 

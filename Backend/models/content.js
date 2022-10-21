@@ -41,12 +41,3 @@ module.exports.addContent = function(newContent,callback){
 
 
 
-// {
-// 	"authorName":"adarshlol",
-// 	"category":"Science fiction",
-// 	"post":"lol happens",
-// 	"image":"https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png",
-// 	"upvote":3,
-// 	"downVote":-2
-// }
-

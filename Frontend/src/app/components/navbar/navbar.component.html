@@ -15,6 +15,7 @@
             <a class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="/profile" *ngIf="authService.loggedIn()">profile</a>
             <a class="nav-link " data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="/login" *ngIf="!authService.loggedIn()">LOGIN</a>
             <a class="nav-link " data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="/postcontent" *ngIf="authService.loggedIn()">Add Post</a>
+            <a class="nav-link " data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="/category" *ngIf="authService.loggedIn()">Categories</a>  
             <a class="nav-link " data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="/adminManage" *ngIf="authService.superAdmin() && authService.loggedIn()">Manage Admin</a>
             <a class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="/register" *ngIf="(authService.Admin() || authService.superAdmin()) && authService.loggedIn()">Manage Categories</a>
             <a class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="/register" *ngIf="(authService.Admin() || authService.superAdmin()) && authService.loggedIn()">Manage Posts</a>
