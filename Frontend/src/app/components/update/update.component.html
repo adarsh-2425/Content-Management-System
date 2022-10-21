@@ -4,7 +4,7 @@
         <p>Draft in {{Contents.authorName}}</p>
     </div>
     <div class="col">
-        <button type="submit" (ngSubmit)="editContent()" id="button" value="Submit" form="a-form">Save Changes</button>
+        <button type="submit"  id="button" value="Submit" form="a-form">Save Changes</button>
         <button type="reset" (click)="resetContent()" id="button" value="reset" form="a-form">Reset</button>
         <button type="button" (click)="discard()" id="button" value="discard" form="a-form">Discard Changes</button>
 
@@ -12,15 +12,21 @@
       
 </div>
 
-<form  id="a-form" #stories = ngForm>
+<form (ngSubmit)="editContent()" id="a-form" #stories = ngForm>
     <div class="form-group">
-        <label for="title"></label>
+        <label for="title" id="labeltitle">Title</label>
+        <br>
         <input type="text" name="title" [(ngModel)]="Contents.title" id="title" class="form-control" placeholder="Title" required>
     </div>
     <div class="form-group">
-        <label for="image"></label>
+        <label for="image">Image URL</label>
         <input type="url" name="image" id="image" [(ngModel)]="Contents.image" class="form-control" cols="20" rows="10" placeholder="Image URL">
+    
+        <div class="img">
+            <img [src]="Contents.image" class="img-fluid" alt="Image">
+        </div>
     </div> 
+    
     <div class="form-group">
         <label for="post"></label>
         <textarea name="post" id="post" class="form-control" [(ngModel)]="Contents.post" cols="20" rows="10" placeholder="Tell your story..." required></textarea>

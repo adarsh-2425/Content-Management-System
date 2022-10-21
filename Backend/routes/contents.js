@@ -3,6 +3,15 @@ const router = express.Router();
 const Content = require('../models/content');
 
 
+// View Contents From The Blog
+router.get('/viewcontent', (req,res)=>{
+    Content.find()
+    .then(function(contents,err){
+        res.send(contents);
+        if(err) throw err;
+    });
+});
+
 router.get(`/:id`, (req,res)=>{
     const id = req.params.id;
     Content.findOne({"_id":id})
@@ -36,14 +45,7 @@ router.post('/postcontent', (req, res)=>{
     })
 });
 
-// View Contents From The Blog
-router.get('/viewcontent', (req,res)=>{
-    Content.find()
-    .then(function(contents,err){
-        res.send(contents);
-        if(err) throw err;
-    });
-});
+
 
 // View Contents By the Author
 // https://www.baeldung.com/mongodb-get-value-by-key-name
@@ -61,7 +63,7 @@ router.put('/updatecontent',(req,res)=>{
     id = req.body._id,
     title = req.body.title,
     image = req.body.image,
-    post = req.body.image,
+    post = req.body.post,
     Content.findByIdAndUpdate({"_id":id},
     {
         $set:{

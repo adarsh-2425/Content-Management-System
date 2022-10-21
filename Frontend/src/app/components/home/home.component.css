@@ -4,3 +4,7 @@
 .card{
     margin: 5%;
 }
+
+/* bootstrap cards same size */
+/* d-flex align-items-stretch */
+/* https://stackoverflow.com/questions/35868756/how-to-make-bootstrap-4-cards-the-same-height-in-card-columns */

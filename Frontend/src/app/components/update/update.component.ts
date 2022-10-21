@@ -33,7 +33,9 @@ Contents = {
   };
 
   editContent(){
+    
     this.ContentService.updateContent(this.Contents);
+    // localStorage.removeItem("editContentId");
     this.toastr.success('Content Updated');
     this.router.navigate(['/dashboard']);
   }
