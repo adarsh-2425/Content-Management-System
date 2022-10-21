@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/services/category.service';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,6 +17,7 @@ export class CategoryComponent implements OnInit {
   constructor(
     private CategoryService:CategoryService,
     private toastr: ToastrService,
+    public authService: AuthService,
     private router: Router
   ) { }
 
