@@ -12,7 +12,7 @@ router.post('/addcategory',(req,res)=>{
     });
 
 
-    Category.addCategory(newCategory, (err,post)=>{
+    Category.addCategory(newCategory, (err,post,data)=>{
         if(err){
             res.json({success:false, result: 'exists', msg:'Category already exists'})
         }

@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const express = require('express');
+const { response } = require('express');
 
 const CategorySchema = mongoose.Schema({
     category:{
@@ -19,7 +21,8 @@ module.exports.addCategory = function(newCategory,callback){
     else if (data === null || !data) {
         newCategory.save(callback);
     } else {
-        callback('lol')
+        console.log('exists')
+        callback('err');
     }
 });
 }
