@@ -57,6 +57,9 @@ export class CategoryComponent implements OnInit {
           //  this.ngOnInit();
           this.ngOnInit();
         }
+        else if(data.result == 'exists'){
+          this.toastr.error('Category Already Exists')
+        }
         else{
           this.toastr.error("Something Went Wrong!")
         }

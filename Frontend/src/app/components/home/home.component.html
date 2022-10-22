@@ -3,8 +3,8 @@
     <h1>Content Management System</h1>
     <p class="lead">Custom MEAN App</p>
     <div>
-        <a routerLink="/register" class="btn btn-success">Register</a>
-        <a routerLink="/login" class="btn btn-danger">Login</a>
+        <a routerLink="/register" class="btn btn-success" *ngIf="!authService.loggedIn()">Register</a>
+        <a routerLink="/login" class="btn btn-danger" *ngIf="!authService.loggedIn()">Login</a>
         
     </div>
 </div>

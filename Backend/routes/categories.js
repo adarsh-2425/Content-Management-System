@@ -11,12 +11,16 @@ router.post('/addcategory',(req,res)=>{
         category : req.body.category
     });
 
+
     Category.addCategory(newCategory, (err,post)=>{
-        if(res.status(200)){
+        if(err){
+            res.json({success:false, result: 'exists', msg:'Category already exists'})
+        }
+        else if(res.status(200)){
             res.json({success:true, msg:'Category added successfully'})
         }
         else{
-            res.json({success:false, msg: 'Cannot add category at the moment!'})
+            res.json({success:false,  msg: 'Cannot add category at the moment!'})
         }
     })
 });
@@ -52,7 +56,6 @@ router.delete('/remove/:id',(req,res)=>{
     const id = req.params.id;
     Category.findByIdAndDelete({"_id": id})
     .then(()=>{
-        console.log('Deletion Success');
         res.send();
     })
 });
