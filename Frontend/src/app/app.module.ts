@@ -27,6 +27,12 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { PostcontentComponent } from './components/postcontent/postcontent.component';
 import { UpdateComponent } from './components/update/update.component';
 import { CategoryComponent } from './components/category/category.component';
+import { CategoryupdateComponent } from './dialogs/categoryupdate/categoryupdate.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -41,7 +47,8 @@ import { CategoryComponent } from './components/category/category.component';
     EditUserComponent,
     PostcontentComponent,
     UpdateComponent,
-    CategoryComponent
+    CategoryComponent,
+    CategoryupdateComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +62,11 @@ import { CategoryComponent } from './components/category/category.component';
       closeButton: true,
   
     }),
+    MatDialogModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatFormFieldModule
   ],
   providers: [
     ValidateService,
@@ -62,7 +74,8 @@ import { CategoryComponent } from './components/category/category.component';
     AuthService,
     UsersService,
     ContentService,
-    CategoryService
+    CategoryService,
+    CategoryupdateComponent
   ],
   bootstrap: [AppComponent]
 })

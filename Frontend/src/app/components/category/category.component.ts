@@ -3,6 +3,8 @@ import { CategoryService } from 'src/app/services/category.service';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import {MatDialog} from '@angular/material/dialog';
+import { CategoryupdateComponent } from 'src/app/dialogs/categoryupdate/categoryupdate.component';
 
 @Component({
   selector: 'app-category',
@@ -14,11 +16,14 @@ export class CategoryComponent implements OnInit {
   Categories:any[] | undefined;
   category:any = '';
 
+  
+
   constructor(
     private CategoryService:CategoryService,
     private toastr: ToastrService,
     public authService: AuthService,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -26,6 +31,18 @@ export class CategoryComponent implements OnInit {
     .subscribe((data)=>{
       this.Categories = JSON.parse(JSON.stringify(data));   
     })
+  }
+
+  openDialog(category:any): void {
+    localStorage.setItem("editCategoryId", category._id.toString());
+    let dialogRef = this.dialog.open(CategoryupdateComponent);
+    
+      height :'40%'
+      width : '60%'
+      
+    // Refresh page after dialog close angular
+    dialogRef.afterClosed()
+    .subscribe(() => this.ngOnInit());
   }
 
   addCategory(){
@@ -45,7 +62,7 @@ export class CategoryComponent implements OnInit {
         }
       }
     )
-  }
+  };
 
   deleteCategory(category:any){
     if (confirm('Are you sure you want to delete this?')) {

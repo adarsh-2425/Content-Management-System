@@ -1,0 +1,12 @@
+<h2 matDialogTitle class="title">Edit Category</h2>
+<form (ngSubmit)="editCategory()" class="forms" #categoryDialog="ngForm">
+    <mat-dialog-content>
+        <div class="form-group">
+            <input  class="border border-danger" [(ngModel)]="Categories.category" type="text" name="category" id="category">
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button class="btn btn-primary" type="submit"  [mat-dialog-close]="true">Update</button>
+        <button class="btn btn-danger cancelbutton"   [mat-dialog-close]="true">cancel</button>  
+    </mat-dialog-actions>
+</form>

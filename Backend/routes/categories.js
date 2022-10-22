@@ -4,6 +4,7 @@ const Category = require('../models/category');
 
 
 
+
 // Add Category
 router.post('/addcategory',(req,res)=>{
     let newCategory = new Category({
@@ -30,6 +31,22 @@ router.get('/viewcategory',(req,res)=>{
     
 });
 
+// Update Category
+router.put('/update',(req,res)=>{
+    id = req.body._id,
+    category = req.body.category,
+    Category.findByIdAndUpdate({"_id":id},
+    {
+        $set : {
+                    "category" : category
+        }
+    })
+    .then(function(){
+        res.send();
+    });
+});
+
+
 // Delete Category
 router.delete('/remove/:id',(req,res)=>{
     const id = req.params.id;
@@ -39,5 +56,15 @@ router.delete('/remove/:id',(req,res)=>{
         res.send();
     })
 });
+
+// Get Category By ID
+router.get('/:id',(req,res)=>{
+    const id = req.params.id;
+    Category.findOne({"_id":id})
+    .then((category) => {
+        res.send(category)
+    });
+})
+
 
 module.exports = router;

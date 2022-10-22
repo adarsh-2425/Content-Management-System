@@ -23,3 +23,9 @@ h3{
     text-align: center;
     padding: 1em;
 }
+.icons{
+    display: flex;
+}
+.update{
+    padding-right: 1em;
+}
