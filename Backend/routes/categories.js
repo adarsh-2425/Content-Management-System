@@ -18,6 +18,7 @@ router.post('/addcategory',(req,res)=>{
         }
         else if(res.status(200)){
             res.json({success:true, msg:'Category added successfully'})
+           
         }
         else{
             res.json({success:false,  msg: 'Cannot add category at the moment!'})

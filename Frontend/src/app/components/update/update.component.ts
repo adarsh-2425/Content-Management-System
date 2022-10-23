@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentService } from 'src/app/services/content.service';
+import { CategoryService } from 'src/app/services/category.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
@@ -10,9 +11,12 @@ import { Router } from '@angular/router';
 })
 export class UpdateComponent implements OnInit {
 
+  Categories:any[] | undefined;
+
 Contents = {
   authorName:'',
   title:'',
+  category:'',
   image:'',
   post:''
 }
@@ -22,14 +26,20 @@ Contents = {
   constructor(
     private ContentService:ContentService,
     private toastr: ToastrService,
+    private CategoryService:CategoryService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+
+    // 
     const editContentId = localStorage.getItem('editContentId');
     this.ContentService.getContent(editContentId).subscribe((data)=>{
      this.Contents = JSON.parse(JSON.stringify(data));
     })
+
+    // Category
+
   };
 
   editContent(){

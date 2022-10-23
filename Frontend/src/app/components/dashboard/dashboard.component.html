@@ -6,6 +6,8 @@
         <div class="card-body">
             <h5 class="card-title">{{content.title}}</h5>
             <p class="card-text">{{content.post}}</p>
+            <p class="card-text">category : {{content.category}}</p>
+
         </div>
           <button class="btn btn-primary" (click)="updateContent(content)" style="cursor:pointer" > Update</button>
           <button class="btn btn-danger"  (click)="delete(content)" style="cursor:pointer" > Delete</button>
