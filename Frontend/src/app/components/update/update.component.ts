@@ -39,6 +39,10 @@ Contents = {
     })
 
     // Category
+    this.CategoryService.viewCategory()
+    .subscribe((data)=>{
+      this.Categories = JSON.parse(JSON.stringify(data));   
+    })
 
   };
 

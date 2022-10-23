@@ -21,6 +21,7 @@
         <select name="categories"  [(ngModel)]="Contents.category"   class="form-control" placeholder="Title">
         <option >Choose a category</option>
         <option   value= {{Contents.category}} >{{Contents.category}}</option>
+        <option   value="{{Category.category}}" *ngFor="let Category of Categories">{{Category.category}}</option>
     </select>
     </div>
     <!-- <div class="form-group">

@@ -62,12 +62,14 @@ router.get('/usercontent/:username', (req,res)=>{
 router.put('/updatecontent',(req,res)=>{
     id = req.body._id,
     title = req.body.title,
+    category = req.body.category,
     image = req.body.image,
     post = req.body.post,
     Content.findByIdAndUpdate({"_id":id},
     {
         $set:{
             "title":title,
+            "category":category,
             "image":image,
             "post":post
         }
