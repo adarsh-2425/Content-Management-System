@@ -68,13 +68,13 @@ export class CategoryComponent implements OnInit {
   };
 
   deleteCategory(category:any){
-    if (confirm('Are you sure you want to delete this?')) {
+    // if (confirm('Are you sure you want to delete this?')) {
     this.CategoryService.deleteCategory(category._id).subscribe(
       data=>{
         this.Categories = this.Categories?.filter(c => c!= category);
         this.toastr.error(`${category.category} deleted`);
             })
-  }};
+  };
 
   check(){
     console.log('Check ok');

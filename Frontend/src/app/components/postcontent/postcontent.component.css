@@ -35,3 +35,6 @@
 .form-group{
     padding: 1em;
 }
+#disabled {
+     color: gray;
+     }
