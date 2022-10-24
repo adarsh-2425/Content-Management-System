@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
+import { ContentService } from 'src/app/services/content.service';
+import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,31 +10,39 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
-
-  user: any;
-  email:any;
-
+  contents:any[] | undefined;
+  content_id:string = '';
   
+
 
   constructor(
-    private authService: AuthService,
-    private router: Router
+    private ContentService:ContentService,
+    private toastr:ToastrService,
+    private router:Router
     ) { }
 
-
-
   ngOnInit(): void {
-    
-    this.authService.getProfile().subscribe(profile => {
-    this.user = profile;
-    console.log(profile);
-    
-      
+    const username = localStorage.getItem('username');
+    this.ContentService.getUserContent(username).subscribe((data)=>{
+    this.contents = JSON.parse(JSON.stringify(data))
     });
-  }
-    
-  
+  };
 
+  updateContent(content:any){
+    localStorage.setItem("editContentId", content._id.toString());
+    this.router.navigate(['/updatecontent'])
+  };
 
+ 
+
+  delete(content:any){
+    if (confirm('Are you sure you want to delete this?')) {
+      this.ContentService.deleteContent(content._id)
+       .subscribe((data)=>{
+        this.contents = this.contents?.filter(c => c !=content)
+        this.toastr.info('Post Deleted');
+    });
+  };
+}
 
 }

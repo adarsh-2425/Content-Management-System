@@ -1,12 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentService } from 'src/app/services/content.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { slideInOut } from 'src/app/animations/animations';
+import { fade } from 'src/app/animations/fade';
 
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  animations: [
+    slideInOut,
+    fade
+  ]
 })
 export class HomeComponent implements OnInit {
 

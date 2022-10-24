@@ -38,3 +38,7 @@
 #disabled {
      color: gray;
      }
+select{
+        cursor: pointer;
+        
+     }

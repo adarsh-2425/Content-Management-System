@@ -11,11 +11,18 @@ import { RegisterComponent } from './components/register/register.component';
 import { UpdateComponent } from './components/update/update.component';
 import { CategoryComponent } from './components/category/category.component';
 import { AuthGuard } from './services/auth.guard';
+import { AdminGuard } from './services/admin.guard';
 
 const routes: Routes = [
-  {path : '', component : HomeComponent},
-  {path : 'register', component : RegisterComponent},
-  {path : 'login', component : LoginComponent},
+  {
+    path : '', component : HomeComponent
+  },
+  {
+    path : 'register', component : RegisterComponent
+  },
+  {
+    path : 'login', component : LoginComponent
+  },
   {
     path : 'dashboard',
     canActivate: [AuthGuard],
@@ -48,7 +55,9 @@ const routes: Routes = [
   },
   {
     path : 'category',
-    canActivate: [AuthGuard],
+    // Protecting routes with multiple AuthGuard conditions
+    // https://codecraft.tv/courses/angular/routing/router-guards/
+    canActivate: [AuthGuard, AdminGuard],
     component : CategoryComponent
   }
 ];

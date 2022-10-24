@@ -19,7 +19,7 @@
 
     <div class="form-group">
         <select name="categories"  [(ngModel)]="categories"   class="form-control" placeholder="Title">
-            <option id="disabled" value="" disabled selected>Select your Category</option>
+            <option id="disabled" value="" style="color: grey;" disabled selected>Select your Category</option>
         <option   value="{{Category.category}}" *ngFor="let Category of Categories">{{Category.category}}</option>
         </select>
     </div>

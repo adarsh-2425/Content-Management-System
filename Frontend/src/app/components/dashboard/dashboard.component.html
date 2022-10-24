@@ -1,4 +1,17 @@
+
 <div class="container">
+  <section class="category">
+    <h6 id="viewPosts">View Posts By :</h6>
+
+  <!-- Mat Chips
+  https://material.angular.io/components/chips/overview
+  -->
+  
+  <mat-chip-list  aria-label="Category selection">
+    <mat-chip class="chips" (click)="ngOnInit()" selected>All Categories</mat-chip>
+    <mat-chip class="chips" color="accent" (click)="contentByCategory(Category)" *ngFor="let Category of Categories" selected>{{Category.category}}</mat-chip>
+  </mat-chip-list>
+  </section>
   <div class="row">
 <div class="col-lg-4 mb-4 d-flex align-items-stretch" *ngFor='let content of contents'>
     <div class="card" >
@@ -9,8 +22,7 @@
             <p class="card-text">category : {{content.category}}</p>
 
         </div>
-          <button class="btn btn-primary" (click)="updateContent(content)" style="cursor:pointer" > Update</button>
-          <button class="btn btn-danger"  (click)="delete(content)" style="cursor:pointer" > Delete</button>
+        
         <div class="card-footer bg-transparent border-success">
           
             <p>Written By : {{content.authorName}}</p>

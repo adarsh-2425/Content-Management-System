@@ -1,3 +1,16 @@
 .card{
     margin-top: 1em;
 }
+
+#category{
+    margin: 1em;
+}
+
+#viewPosts{
+    margin: 1em;
+    margin-left : 0;
+}
+
+.chips{
+    cursor: pointer;
+}

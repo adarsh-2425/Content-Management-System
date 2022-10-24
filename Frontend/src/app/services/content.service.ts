@@ -36,6 +36,10 @@ export class ContentService {
     return this.http.get(`${this.server_address}/contents/usercontent/`+username)
   }
 
+  getContentByCategory(category:any){
+    return this.http.get(`${this.server_address}/contents/viewbycategory/`+category)
+  }
+
   updateContent(content:any){
     return this.http.put(`${this.server_address}/contents/updatecontent`,content)
     .subscribe(data => {

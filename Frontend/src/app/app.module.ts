@@ -33,6 +33,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatChipsModule
   ],
   providers: [
     ValidateService,

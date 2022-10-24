@@ -1,9 +1,23 @@
-<div *ngIf="user" >
-    <h2 class="page-header">{{user.firstName + " "  + user.lastName}}</h2>
-    <ul class="list-group">
-        <li class="list-group-item">Username: {{user.username}}</li>
-        <li class="list-group-item">Email: {{user.email}}</li>
-        
-    </ul>
-</div>
-<h2>lol</h2>
+<div class="container">
+    <div class="row">
+  <div class="col-lg-4 mb-4 d-flex align-items-stretch" *ngFor='let content of contents'>
+      <div class="card" >
+          <img class="card-img-top img-fluid img-thumbnail" [src]="content.image" alt="Card image cap">
+          <div class="card-body">
+              <h5 class="card-title">{{content.title}}</h5>
+              <p class="card-text">{{content.post}}</p>
+              <p class="card-text">category : {{content.category}}</p>
+  
+          </div>
+            <button class="btn btn-primary" (click)="updateContent(content)" style="cursor:pointer" > Update</button>
+            <button class="btn btn-danger"  (click)="delete(content)" style="cursor:pointer" > Delete</button>
+          <div class="card-footer bg-transparent border-success">
+            
+              <p>Written By : {{content.authorName}}</p>
+              <p>Created At : {{content.createdAt}}</p> 
+          </div>
+        </div>
+      </div>
+    </div>
+    </div> 
+  

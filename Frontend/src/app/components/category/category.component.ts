@@ -5,14 +5,20 @@ import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import { CategoryupdateComponent } from 'src/app/dialogs/categoryupdate/categoryupdate.component';
+import { slideInOut } from 'src/app/animations/animations';
+import { fade } from 'src/app/animations/fade';
 
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
+  styleUrls: ['./category.component.css'],
+  animations: [
+    slideInOut,
+    fade
+  ]
 })
 export class CategoryComponent implements OnInit {
-
+  visible: any;
   Categories:any[] | undefined;
   category:any = '';
 

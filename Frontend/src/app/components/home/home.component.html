@@ -11,16 +11,18 @@
 <br>
 
 
-<div class="row" >
+<div class="row" @fade >
   <div class="col-lg-4 mb-4 d-flex align-items-stretch" *ngFor='let content of contents'>
 <div class="card">
     <div class="card-header bg-transparent border-success font-weight-bold"></div>    
     <img class="card-img-top" [src]="content.image" alt="Card image cap">
     <div class="card-body">
         <h5 class="card-title">{{content.title}}</h5>
-      <p class="card-text">{{content.post}}</p>
+        <p class="card-text">{{content.post}}</p>
+
     </div>
     <div class="card-footer bg-transparent border-success">
+      <p class="card-text">category : {{content.category}}</p>
         <p>Written By : {{content.authorName}}</p>
         <p>Created At : {{content.createdAt}}</p> 
     </div>

@@ -12,6 +12,8 @@ router.get('/viewcontent', (req,res)=>{
     });
 });
 
+
+
 router.get(`/:id`, (req,res)=>{
     const id = req.params.id;
     Content.findOne({"_id":id})
@@ -55,6 +57,15 @@ router.get('/usercontent/:username', (req,res)=>{
     .then(function(contents,err){
         res.send(contents);
         if(err) throw err;
+    });
+});
+// View Post by Category
+router.get('/viewbycategory/:category',(req,res)=>{
+    category = req.params.category;
+    Content.find({"category":category})
+    .then(function(contents,err){
+        res.send(contents);
+        if (err) throw err;
     });
 });
 
