@@ -14,3 +14,17 @@
 .chips{
     cursor: pointer;
 }
+
+.profilepic{
+    border-radius: 50%;
+}
+
+/* limit text inside multiline p tag */
+/* https://stackoverflow.com/questions/33058004/applying-an-ellipsis-to-multiline-text */
+.contentpost{
+    display: -webkit-box;
+    max-width: 28em;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

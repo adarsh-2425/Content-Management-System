@@ -14,6 +14,8 @@ export class DashboardComponent implements OnInit {
   contents:any[] | undefined;
   content_id:string = '';
   Categories:any[] | undefined;
+   username = localStorage.getItem('username');;
+
   
 
 
@@ -32,7 +34,8 @@ export class DashboardComponent implements OnInit {
 
     // calling viewAllCategories() function
     this.viewAllCategories();
-
+    this.user();
+    
   };
 
   // View posts from all categories
@@ -47,6 +50,11 @@ export class DashboardComponent implements OnInit {
     this.ContentService.getContentByCategory(Category.category).subscribe((data)=>{
       this.contents = JSON.parse(JSON.stringify(data));
     })
+  }
+
+  user(){
+   this.username = localStorage.getItem('username');  
+    
   }
 
 }

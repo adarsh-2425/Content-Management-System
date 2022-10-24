@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ContentService } from 'src/app/services/content.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { slideInOut } from 'src/app/animations/animations';
 import { fade } from 'src/app/animations/fade';
@@ -16,17 +15,15 @@ import { fade } from 'src/app/animations/fade';
 })
 export class HomeComponent implements OnInit {
 
-  contents:any[] | undefined
+  contents:any[] | undefined;
+  Categories:any[] | undefined;
 
   constructor(
-    private ContentService:ContentService,
-    public authService:AuthService
+    public AuthService:AuthService
     ) { }
 
   ngOnInit(): void {
-    this.ContentService.getContents().subscribe((data)=>{
-      this.contents = JSON.parse(JSON.stringify(data))
-    });
+
   }
 
 }

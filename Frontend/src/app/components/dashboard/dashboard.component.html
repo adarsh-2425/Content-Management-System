@@ -1,5 +1,8 @@
 
 <div class="container">
+  <!-- Main Dashboard -->
+
+       <!-- Category -->
   <section class="category">
     <h6 id="viewPosts">View Posts By :</h6>
 
@@ -12,6 +15,7 @@
     <mat-chip class="chips" color="accent" (click)="contentByCategory(Category)" *ngFor="let Category of Categories" selected>{{Category.category}}</mat-chip>
   </mat-chip-list>
   </section>
+<!-- Contents -->
   <div class="row">
 <div class="col-lg-4 mb-4 d-flex align-items-stretch" *ngFor='let content of contents'>
     <div class="card" >
@@ -20,7 +24,9 @@
         <img class="card-img-top img-fluid img-thumbnail" [src]="content.image" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">{{content.title}}</h5>
-            <p class="card-text">{{content.post}}</p>
+            <p class="card-text contentpost">{{content.post}} </p>
+            <p class="card-text"><a href="">Read More</a></p>
+            
             <mat-chip-list>
               <mat-chip  color="accent" selected>{{content.category}}</mat-chip>
             </mat-chip-list>
@@ -34,4 +40,20 @@
       </div>
     </div>
   </div>
+    
+
+    <!-- Author -->
+    <!-- <div class="col-6 col-md-4 ">
+      <div class="card" >
+        <img class="card-img-top profilepic"  alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{username}}</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div> -->
+
+
+
   </div> 

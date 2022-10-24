@@ -1,32 +1,12 @@
 <div class="container">
-<!-- <div class="mt-4 p-5 bg-primary text-white rounded text-center">
+<div class="mt-4 p-5 bg-primary text-white rounded text-center">
     <h1>Content Management System</h1>
-    <p class="lead">Custom MEAN App</p>
+    <p class="lead">Custom Blog</p>
     <div>
-        <a routerLink="/register" class="btn btn-success" *ngIf="!authService.loggedIn()">Register</a>
-        <a routerLink="/login" class="btn btn-danger" *ngIf="!authService.loggedIn()">Login</a>
+        <a routerLink="/register" class="btn btn-success" *ngIf="!AuthService.loggedIn()">Register</a>
+        <a routerLink="/login" class="btn btn-danger" *ngIf="!AuthService.loggedIn()">Login</a>
         
     </div>
-</div> -->
+</div>
 <br>
-
-
-<div class="row" @fade >
-  <div class="col-lg-4 mb-4 d-flex align-items-stretch" *ngFor='let content of contents'>
-<div class="card">
-    <div class="card-header bg-transparent border-success font-weight-bold"></div>    
-    <img class="card-img-top" [src]="content.image" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">{{content.title}}</h5>
-        <p class="card-text contentpost"  >{{content.post}}</p>
-        <mat-chip   color="accent" selected>{{content.category}}</mat-chip>
-
-    </div>
-    <div class="card-footer bg-transparent border-success">
-        <p>Written By : {{content.authorName}}</p>
-        <p>Created At : {{content.createdAt}}</p> 
-    </div>
-  </div>
-</div>
-</div>
-</div>
+<app-dashboard></app-dashboard>

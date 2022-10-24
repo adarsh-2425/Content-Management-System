@@ -34,6 +34,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatChipsModule} from '@angular/material/chips';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import {MatChipsModule} from '@angular/material/chips';
     PostcontentComponent,
     UpdateComponent,
     CategoryComponent,
-    CategoryupdateComponent
+    CategoryupdateComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
