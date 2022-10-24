@@ -12,6 +12,7 @@ export class ProfileComponent implements OnInit {
 
   contents:any[] | undefined;
   content_id:string = '';
+  username:string = '';
   
 
 
@@ -26,6 +27,9 @@ export class ProfileComponent implements OnInit {
     this.ContentService.getUserContent(username).subscribe((data)=>{
     this.contents = JSON.parse(JSON.stringify(data))
     });
+
+    localStorage.removeItem('editContentId');
+
   };
 
   updateContent(content:any){

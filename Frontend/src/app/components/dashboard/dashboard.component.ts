@@ -34,7 +34,8 @@ export class DashboardComponent implements OnInit {
 
     // calling viewAllCategories() function
     this.viewAllCategories();
-    this.user();
+    localStorage.removeItem('editContentId');
+    
     
   };
 
@@ -56,5 +57,22 @@ export class DashboardComponent implements OnInit {
    this.username = localStorage.getItem('username');  
     
   }
+
+  updateContent(content:any){
+    localStorage.setItem("editContentId", content._id.toString());
+    this.router.navigate(['/updatecontent'])
+  };
+
+ 
+
+  delete(content:any){
+    if (confirm('Are you sure you want to delete this?')) {
+      this.ContentService.deleteContent(content._id)
+       .subscribe((data)=>{
+        this.contents = this.contents?.filter(c => c !=content)
+        this.toastr.info('Post Deleted');
+    });
+  };
+}
 
 }
