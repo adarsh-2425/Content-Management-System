@@ -15,9 +15,8 @@
               <tr *ngFor='let user of users'>              
                   <td>{{ user.firstName + " " + user.lastName}}</td>
                   <td>{{ user.role }}</td>
-                  <td>{{ user._id }}</td>
                   <td>
-                    <button class="btn btn-success" style="cursor:pointer" (click)="promote(user)"  style="margin-left: 20px;"> Promote</button>
+                    <button class="btn btn-success" style="cursor:pointer" (click)="openDialog(user)"  style="margin-left: 20px;"> Promote</button>
                 </tr>              
           </tbody>
           </table>

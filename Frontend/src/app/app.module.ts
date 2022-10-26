@@ -35,6 +35,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatChipsModule} from '@angular/material/chips';
 import { FooterComponent } from './components/footer/footer.component';
+import { PromoteDialogComponent } from './dialogs/promote-dialog/promote-dialog.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { FooterComponent } from './components/footer/footer.component';
     UpdateComponent,
     CategoryComponent,
     CategoryupdateComponent,
-    FooterComponent
+    FooterComponent,
+    PromoteDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +81,8 @@ import { FooterComponent } from './components/footer/footer.component';
     UsersService,
     ContentService,
     CategoryService,
-    CategoryupdateComponent
+    CategoryupdateComponent,
+    PromoteDialogComponent
   ],
   bootstrap: [AppComponent]
 })

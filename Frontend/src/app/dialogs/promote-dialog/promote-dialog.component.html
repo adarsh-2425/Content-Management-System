@@ -1,0 +1,16 @@
+<h2 matDialogTitle class="title">Promote To</h2>
+<form (ngSubmit)="editUser(user)" class="forms" #promoteDialog="ngForm">
+    <mat-dialog-content>
+        <div class="form-group">
+            <select id="inputRole"  [(ngModel)]="user.role" name="role" >
+                <option >Admin</option>
+                <option >user</option>
+              </select>
+              
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button class="btn btn-primary" type="submit"  [mat-dialog-close]="true">Update</button>
+        <button class="btn btn-danger cancelbutton"   [mat-dialog-close]="true">cancel</button>  
+    </mat-dialog-actions>
+</form>
