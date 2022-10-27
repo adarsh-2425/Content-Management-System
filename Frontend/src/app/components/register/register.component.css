@@ -24,6 +24,15 @@
 .asterik{
     color: red;
 }
+.weakPwd{
+    color: red;
+}
+.mediumPwd{
+    color: orange;
+}
+.strongPwd{
+    color: green;
+}
 
 
 
