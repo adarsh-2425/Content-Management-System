@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   description = document.getElementsByClassName('description');
   testhtml:string = '';
   alertStyle:string = '';
-  pwdType:boolean = false;
+  pwdType:boolean = true;
   backgroundUrl=" https://source.unsplash.com/YkA7CLrMg8g"
   
   firstName:string = '';

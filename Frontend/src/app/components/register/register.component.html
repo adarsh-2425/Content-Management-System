@@ -37,12 +37,12 @@
     <div class="form-group">
         <label for="name">Password</label>
         <span class="asterik"> *</span>
-        <input type= "{{pwdType? 'password' : 'text'}}" id="myInput"  (keyup)="checkstrength()"  [(ngModel)]="password" name="password" class="form-control pwdIcon">
+        <input  type= "{{pwdType? 'password' : 'text'}}" id="myInput"  (keyup)="checkstrength()"  [(ngModel)]="password" name="password" class="form-control pwdIcon">
         <br>
         <!-- An element to toggle between password visibility -->
-        <input type="checkbox" (click)="pwdToggle()">Show Password
+        <input type="checkbox" (click)="pwdToggle()"> Show Password
         <br>  
-
+<br>
         <span class="{{alertStyle}}" [innerHtml]="testhtml"></span>
 
         <li>Password must contain Minimum 8 characters, at least one uppercase, one lower case, and one number</li>
