@@ -6,8 +6,11 @@
           <img class="card-img-top img-fluid img-thumbnail" [src]="content.image" alt="Card image cap">
           <div class="card-body">
               <h5 class="card-title">{{content.title}}</h5>
-              <p class="card-text">{{content.post}}</p>
-              <p class="card-text">category : {{content.category}}</p>
+              <p class="card-text contentpost">{{content.post}}</p>
+            <p class="card-text link">  <a (click)="ViewContent(content)">Read More...</a> </p>
+            <mat-chip-list>
+              <mat-chip  color="accent" selected>{{content.category}}</mat-chip>
+            </mat-chip-list>
   
           </div>
             <button class="btn btn-primary" (click)="updateContent(content)" style="cursor:pointer" > Update</button>

@@ -16,6 +16,10 @@ export class UsersService {
     return this.http.get(`http://localhost:3000/users/`+id);
   }
 
+  getUserByPost(username:any){
+    return this.http.get(`http://localhost:3000/users/userpost/`+username);
+  }
+
   editUser(user:any)
   {
     console.log('User update')

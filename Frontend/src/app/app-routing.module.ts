@@ -12,6 +12,7 @@ import { UpdateComponent } from './components/update/update.component';
 import { CategoryComponent } from './components/category/category.component';
 import { AuthGuard } from './services/auth.guard';
 import { AdminGuard } from './services/admin.guard';
+import { ViewComponent } from './components/view/view.component';
 
 const routes: Routes = [
   {
@@ -52,6 +53,11 @@ const routes: Routes = [
     path : 'updatecontent',
     canActivate: [AuthGuard],
     component : UpdateComponent
+  },
+  
+  {
+    path : 'viewcontent',
+    component : ViewComponent
   },
   {
     path : 'category',

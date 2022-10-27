@@ -28,3 +28,7 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+.link{
+    color: blue;
+    cursor: pointer;
+}

@@ -35,6 +35,7 @@ export class DashboardComponent implements OnInit {
     // calling viewAllCategories() function
     this.viewAllCategories();
     localStorage.removeItem('editContentId');
+    localStorage.removeItem('viewAuthorId');
     
     
   };
@@ -62,6 +63,12 @@ export class DashboardComponent implements OnInit {
     localStorage.setItem("editContentId", content._id.toString());
     this.router.navigate(['/updatecontent'])
   };
+
+  ViewContent(content:any){
+    localStorage.setItem("viewContentId", content._id.toString());
+    localStorage.setItem("viewAuthorId", content.authorName.toString());
+    this.router.navigate(['/viewcontent'])
+  }
 
  
 

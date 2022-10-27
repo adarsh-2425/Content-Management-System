@@ -25,7 +25,7 @@
         <div class="card-body">
             <h5 class="card-title">{{content.title}}</h5>
             <p class="card-text contentpost">{{content.post}} </p>
-            <p class="card-text "> <a href="">Read More...</a> </p>
+            <p class="card-text link">  <a (click)="ViewContent(content)">Read More...</a> </p>
             
             <mat-chip-list>
               <mat-chip  color="accent" selected>{{content.category}}</mat-chip>

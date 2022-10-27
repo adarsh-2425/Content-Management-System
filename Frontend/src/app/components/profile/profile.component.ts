@@ -49,4 +49,9 @@ export class ProfileComponent implements OnInit {
   };
 }
 
+ViewContent(content:any){
+  localStorage.setItem("viewContentId", content._id.toString());
+  this.router.navigate(['/viewcontent'])
+}
+
 }
