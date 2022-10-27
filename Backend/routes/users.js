@@ -4,6 +4,7 @@ const User = require('../models/user');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
+const { find } = require('../models/user');
 
 //REGISTER
 router.post('/register', (req,res,next)=>{
@@ -36,10 +37,9 @@ router.get('/userlist',function(req,res){
                     });   
 });
 
+// Update User
 router.put('/updateuser',(req,res)=>{
-    
-    
-    
+
     id=req.body._id,
     role = req.body.role,
    User.findByIdAndUpdate({"_id":id},
@@ -49,6 +49,7 @@ router.put('/updateuser',(req,res)=>{
    })
  })
 
+//  Search User based on id
  router.get('/:id',  (req, res) => {
       
     User.findById(req.params.id)
@@ -56,6 +57,18 @@ router.put('/updateuser',(req,res)=>{
           res.send(user);
       });
   })
+
+//  Search user based on username
+router.get('/userpost/:username', (req,res)=>{
+    username = req.params.username;
+    // findone returns Object
+    // find returns Array
+    User.findOne({username})
+    .then((users)=>{
+        res.send(users)
+    });
+}) ;
+
 
 // Authenticate
 router.post('/authenticate', (req,res,next)=>{
