@@ -27,6 +27,14 @@ const UserSchema = mongoose.Schema({
         type: Number,
         required: true
     },
+    about: {
+        type: String,
+        required: true
+    },
+    image: {
+        type: String,
+        required: true
+    },
     username: {
         type: String,
         required: true
