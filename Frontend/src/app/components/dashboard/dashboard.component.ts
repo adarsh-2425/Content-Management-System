@@ -15,14 +15,13 @@ export class DashboardComponent implements OnInit {
   content_id:string = '';
   Categories:any[] | undefined;
   like:boolean = false;
+  likedPost:string = '';
   liked:string = 'liked';
   disliked:string = 'disliked';
    username = localStorage.getItem('username');;
 
   
-   likeToggle():void{
-    this.like = !this.like;
-  }
+   
 
   constructor(
     private ContentService:ContentService,
@@ -46,7 +45,10 @@ export class DashboardComponent implements OnInit {
   };
 
   // Like feature
- 
+ likeToggle(content:any){
+  
+    this.like = !this.like;
+  }
   // View posts from all categories
   viewAllCategories(){
     this.ContentService.getContents().subscribe((data)=>{
