@@ -21,11 +21,13 @@ const ContentSchema = mongoose.Schema({
     image: {
         type: String
     },
-    upVote: {
-        type: Number
+    likes: {
+      type: Number, 
+      default: 0 
     },
-    downVote: {
-        type: Number
+    dislikes: {
+      type: Number, 
+      default: 0 
     }
 },
 {

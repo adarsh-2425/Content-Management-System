@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-const express = require('express');
-const { response } = require('express');
 
 const CategorySchema = mongoose.Schema({
     category:{

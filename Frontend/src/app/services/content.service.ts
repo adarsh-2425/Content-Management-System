@@ -51,6 +51,8 @@ export class ContentService {
     return this.http.delete(`${this.server_address}/contents/delete/`+id)
   }
 
+ 
+
   resetContent(){
     this.toastr.info('Reset Done')
   }
