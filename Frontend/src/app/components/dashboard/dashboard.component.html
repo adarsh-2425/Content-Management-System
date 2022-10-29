@@ -31,7 +31,11 @@
               <mat-chip  color="accent" selected>{{content.category}}</mat-chip>
             </mat-chip-list>
         </div>
-
+<div class="likeFeature">
+  <abbr title="Like This Post">
+  <i class="likeicon fa-border-color fa-solid fa-heart fa-xl" class="{{like? 'liked' : 'disliked'}}" style="cursor: pointer;" (click)="likeToggle()"></i>
+</abbr>
+</div>
 
         <button class="btn btn-primary" (click)="updateContent(content)" style="cursor:pointer" > Update</button>
             <button class="btn btn-danger"  (click)="delete(content)" style="cursor:pointer" > Delete</button>
