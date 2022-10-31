@@ -1,5 +1,6 @@
 .login{
     margin: 5%;
+    margin-top: 5em;
     border: 1px solid green;
     background-color:lightgreen;
 }
@@ -27,4 +28,11 @@
     display: flex;
     justify-content: center;
     padding: 1em;
+}
+
+.welcomeImage{
+    margin: 2em;
+    margin-top: 5em;
+    height: 23em;
+    width: 35em;
 }

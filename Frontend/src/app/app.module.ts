@@ -65,6 +65,7 @@ import { ViewComponent } from './components/view/view.component';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
       preventDuplicates: true,
+      "positionClass": "toast-top-center",
       timeOut: 1500,
       closeButton: true,
   

@@ -1,15 +1,19 @@
-<div class="container-fluid">
-<div class="login" [ngStyle]="{'background': 'url(' + backgroundUrl + ')   0 / cover'}" >
+<div class="container-fluid" >
+    <div class="row" >
+
+        <!-- Login Page -->
+        <div class="col-sm-12 col-md-12 col-lg-6">
+<div class="login" [ngStyle]="{'background': 'url(' + loginDivUrl + ')   0 / cover'}" >
 
     <h2 class="page-header">Login</h2>
     <form class="loginform" (ngSubmit)="onLoginSubmit()">
         <div class="form-group">
             <label for="username">Email</label>
-            <input type="text" name="email" [(ngModel)]="email" class="form-control">
+            <input type="text" placeholder="name@abc.com" name="email" [(ngModel)]="email" class="form-control">
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" [(ngModel)]="password" class="form-control">
+            <input type="password" placeholder="password" name="password" [(ngModel)]="password" class="form-control">
         </div>
         <div class="button">
         <input type="submit" class="btn btn-primary" value="Login">
@@ -17,4 +21,12 @@
     </form>
     <a id="already" routerLink="/register">Feel Free to Create a Account</a>
     </div>
+</div>
+<!-- Image -->
+<!-- https://stackoverflow.com/questions/55553983/how-to-hide-columns-on-a-layout-screen-size-on-react-bootstrap
+d-none  -->
+<div class="welcomeImage d-none img-fluid rounded  d-lg-block col-md-8 col-lg-6" [ngStyle]="{'background': 'url(' + welcomebackUrl + ')   0 / cover'}">
+
+</div>
+</div>
 </div>

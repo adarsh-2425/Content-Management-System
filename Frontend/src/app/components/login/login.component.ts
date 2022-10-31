@@ -11,8 +11,10 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent implements OnInit {
 
-  backgroundUrl="https://source.unsplash.com/-4qhiC6RmQw"
-  
+  // Images
+  loginDivUrl="https://source.unsplash.com/-4qhiC6RmQw";
+  welcomebackUrl="https://source.unsplash.com/AdqD4Tca080";
+  mainUrl="https://source.unsplash.com/YkA7CLrMg8g";
  
 
   email:string = '';
@@ -33,6 +35,11 @@ export class LoginComponent implements OnInit {
     const user = {
       email: this.email,
       password: this.password
+    }
+
+    if(!this.validateService.validateEmail(user.email)){
+      this.toastr.error('Please enter valid email');
+      return false;
     }
 
     if(!this.validateService.validateLogin(user)){

@@ -37,8 +37,8 @@
 </abbr>
 </div>
 
-        <button class="btn btn-primary" (click)="updateContent(content)" style="cursor:pointer" > Update</button>
-            <button class="btn btn-danger"  (click)="delete(content)" style="cursor:pointer" > Delete</button>
+        <button class="btn btn-primary" (click)="updateContent(content)" *ngIf="authService.loggedIn()" style="cursor:pointer" > Update</button>
+            <button class="btn btn-danger"  (click)="delete(content)" *ngIf="authService.loggedIn()" style="cursor:pointer" > Delete</button>
         
         <div class="card-footer bg-transparent border-success">
             <p>Written By : {{content.authorName}}</p>

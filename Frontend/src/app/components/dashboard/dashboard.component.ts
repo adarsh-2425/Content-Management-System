@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentService } from 'src/app/services/content.service';
 import { CategoryService } from 'src/app/services/category.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
@@ -27,7 +28,8 @@ export class DashboardComponent implements OnInit {
     private ContentService:ContentService,
     private toastr:ToastrService,
     private CategoryService:CategoryService,
-    private router:Router
+    private router:Router,
+    public authService : AuthService
     ) { }
 
   ngOnInit(): void {

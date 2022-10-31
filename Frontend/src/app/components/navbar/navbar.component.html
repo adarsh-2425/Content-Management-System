@@ -20,7 +20,7 @@
 
             <a class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="/dashboard" *ngIf="(authService.Admin() || authService.superAdmin()) && authService.loggedIn()">Manage Posts</a>
             <a class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="/register" *ngIf="!authService.loggedIn()">REGISTER</a>
-            <a class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" href="#" *ngIf="authService.loggedIn()" (click)="onLogoutClick()">Logout</a>
+            <a class="nav-link logout" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" aria-current="page" routerLink="" *ngIf="authService.loggedIn()" (click)="onLogoutClick()">Logout</a>
 
           </div>
       </div>
