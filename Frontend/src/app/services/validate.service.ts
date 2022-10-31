@@ -45,7 +45,20 @@ export class ValidateService {
     const regex = /^([A-Za-z0-9\-._=&<>,+]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/;
     return regex.test(email);
   }
-  
+
+  validatePhone(phone:any){
+    const regex = /^([0-9]{10})+$/
+    return regex.test(phone);
+  }
+
+  validateName(name:any){
+    if(name == ""){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }  
   isPassword(password:any){
     return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password);
   }

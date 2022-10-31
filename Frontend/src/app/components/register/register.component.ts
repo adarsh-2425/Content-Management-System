@@ -13,7 +13,15 @@ export class RegisterComponent implements OnInit {
 
   description = document.getElementsByClassName('description');
   testhtml:string = '';
+  Namehtml:string = '';
+  Phonehtml:string = '';
+  Emailhtml:string = '';
   alertStyle:string = '';
+  alertName:string = '';
+  alertPhone:string = '';
+  alertEmail:string = '';
+  borderLastName:string = '';
+  borderok:string = '';
   pwdType:boolean = true;
   backgroundUrl=" https://source.unsplash.com/YkA7CLrMg8g"
   
@@ -41,6 +49,45 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
   
+// First Name Check
+checkName(){
+  const user = {
+    firstName: this.firstName.trim()
+  }
+  if(!this.validateService.validateName(user.firstName)){
+    this.Namehtml = "<p>Enter Name</p>";
+    this.alertStyle = 'weakPwd';
+  }
+  else{
+    this.Namehtml = "";
+  }
+}
+
+checkPhone(){
+  const user = {
+    phone: this.phone.trim()
+  }
+  if(!this.validateService.validatePhone(user.phone)){
+    this.Phonehtml = "<p>Enter Phone Number</p>";
+    this.alertStyle = 'weakPwd';
+  }
+  else{
+    this.Phonehtml = "";
+  }
+}
+
+checkEmail(){
+  const user = {
+    email: this.email.trim()
+  }
+  if(!this.validateService.validateEmail(user.email)){
+    this.Emailhtml = "<p>Enter Valid Email</p>";
+    this.alertStyle = 'weakPwd';
+  }
+  else{
+    this.Emailhtml = "";
+  }
+}
 
 
 // Checking Password Strength
@@ -91,9 +138,15 @@ if(this.validateService.isPassword(user.password)){
       repeatPassword: this.repeatPassword.trim()
     }
 
+    
      // required fields
  if(!this.validateService.validateRegister(user)){
-  this.toastr.error('Please Fill in all fields');
+  this.toastr.error('Please Fill Required Fields');
+  return false;
+}
+// Validate Number
+if(!this.validateService.validatePhone(user)){
+  this.toastr.error('Please Enter Correct Number');
   return false;
 }
 
