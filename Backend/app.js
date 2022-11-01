@@ -30,8 +30,7 @@ const port = 3000;
 // CORS Middleware
 app.use(cors());
 
-// Set Static Folder
-app.use(express.static(path.join(__dirname,'public')))
+
 
 // bodyparser parses incoming request. eg: parsing content from form
 app.use(bodyParser.json());
@@ -50,14 +49,17 @@ app.use(passport.session());
 
 require('./config/passport')(passport);
 
-app.use('/users', users);
-app.use('/contents', contents);
-app.use('/categories', categories);
+app.use('/api/users', users);
+app.use('/api/contents', contents);
+app.use('/api/categories', categories);
+
+// Set Static Folder
+app.use(express.static(`./public`));
 
 // Index Route
-app.get('/', (req,res)=>{
-    res.send('Invalid endpoint')
-});
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname + './public/index.html'));
+    });
 
 // Start Server
 app.listen(port, ()=>{

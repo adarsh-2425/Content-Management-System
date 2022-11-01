@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-import { JwtHelperService } from "@auth0/angular-jwt";
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+ //server_address= "http://localhost:3000";
+server_address= "api";
 
   authtoken: any;
   user: any;
@@ -18,7 +20,7 @@ export class AuthService {
   registerUser(user: any) {
     let headers = new HttpHeaders()
     headers.append('Content-Type', 'application/json')
-    return this.http.post<any>('http://localhost:3000/users/register', user, {
+    return this.http.post<any>(`${this.server_address}/users/register`, user, {
       headers
     })
   }
@@ -26,7 +28,7 @@ export class AuthService {
   authenticateUser(user:any){
     let headers = new HttpHeaders()
     headers.append('Content-Type', 'application/json')
-    return this.http.post<any>('http://localhost:3000/users/authenticate', user, {
+    return this.http.post<any>(`${this.server_address}/users/authenticate`, user, {
       headers
     })
   }
@@ -37,7 +39,7 @@ export class AuthService {
       'Content-Type': 'application/json',
       'Authorization': this.authtoken
     });
-    return this.http.get('http://localhost:3000/users/profile', {headers: headers});
+    return this.http.get(`${this.server_address}/users/profile`, {headers: headers});
   }
 
   storeUserData(token:any, user:any, role:any, username:any){

@@ -6,26 +6,27 @@ import { HttpClient } from '@angular/common/http'
 })
 export class UsersService {
 
-  server_address= "http://localhost:3000";
+  //server_address= "http://localhost:3000";
+server_address= "api";
 
   constructor(private http:HttpClient) { }
 
   getUsers(){
-    return this.http.get(`http://localhost:3000/users/userlist`);
+    return this.http.get(`${this.server_address}/users/userlist`);
   }
 
   getUser(id:any){
-    return this.http.get(`http://localhost:3000/users/`+id);
+    return this.http.get(`${this.server_address}/users/`+id);
   }
 
   getUserByPost(username:any){
-    return this.http.get(`http://localhost:3000/users/userpost/`+username);
+    return this.http.get(`${this.server_address}/users/userpost/`+username);
   }
 
   editUser(user:any)
   {
     console.log('User update')
-    return this.http.put(`http://localhost:3000/users/updateuser/`,user)
+    return this.http.put(`${this.server_address}/users/updateuser/`,user)
     .subscribe(data =>{console.log(data)})
   }
 

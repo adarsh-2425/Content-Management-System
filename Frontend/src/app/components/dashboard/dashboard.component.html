@@ -18,7 +18,7 @@
 <!-- Contents -->
   <div class="row">
 <div class="col-lg-4 mb-4 d-flex align-items-stretch" *ngFor='let content of contents'>
-    <div class="card" >
+    <div class="card shadow" >
       <div class="card-header">
       </div>
         <img class="card-img-top img-fluid img-thumbnail" [src]="content.image" alt="Card image cap">
@@ -31,15 +31,16 @@
               <mat-chip  color="accent" selected>{{content.category}}</mat-chip>
             </mat-chip-list>
         </div>
-<div class="likeFeature">
+        <!-- Like -->
+<!-- <div class="likeFeature" *ngIf="authService.loggedIn()">
   <abbr title="Like This Post">
   <i class="likeicon fa-border-color fa-solid fa-heart fa-xl" class="{{like? 'liked' : 'disliked'}}" style="cursor: pointer;" (click)="likeToggle(content)"></i>
 </abbr>
-</div>
-
-        <button class="btn btn-primary" (click)="updateContent(content)" *ngIf="authService.loggedIn()" style="cursor:pointer" > Update</button>
-            <button class="btn btn-danger"  (click)="delete(content)" *ngIf="authService.loggedIn()" style="cursor:pointer" > Delete</button>
-        
+</div> -->
+<div class="button" *ngIf="authService.Admin() || authService.superAdmin()">
+        <button class="btn btn-primary" (click)="updateContent(content)" style="cursor:pointer" > Update</button>
+            <button class="btn btn-danger"  (click)="delete(content)" style="cursor:pointer" > Delete</button>
+          </div>
         <div class="card-footer bg-transparent border-success">
             <p>Written By : {{content.authorName}}</p>
             <p>Created At : {{content.createdAt}}</p> 

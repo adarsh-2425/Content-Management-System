@@ -29,11 +29,9 @@ const UserSchema = mongoose.Schema({
     },
     about: {
         type: String,
-        required: true
     },
     image: {
         type: String,
-        required: true
     },
     username: {
         type: String,

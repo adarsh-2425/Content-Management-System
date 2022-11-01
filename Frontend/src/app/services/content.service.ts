@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class ContentService {
 
-  server_address= "http://localhost:3000";
+ //server_address= "http://localhost:3000";
+ server_address= "api";
 
   constructor(
     private http:HttpClient,

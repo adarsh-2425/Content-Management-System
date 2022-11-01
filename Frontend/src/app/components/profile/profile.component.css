@@ -15,3 +15,6 @@
     color: blue;
     cursor: pointer;
 }
+.card:hover{
+    background-color:aliceblue;
+}

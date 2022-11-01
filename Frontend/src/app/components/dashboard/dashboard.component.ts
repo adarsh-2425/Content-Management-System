@@ -81,6 +81,9 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/viewcontent'])
   }
 
+    likePost(content:any){
+      
+    }
  
 
   delete(content:any){

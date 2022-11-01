@@ -49,45 +49,6 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
   
-// First Name Check
-checkName(){
-  const user = {
-    firstName: this.firstName.trim()
-  }
-  if(!this.validateService.validateName(user.firstName)){
-    this.Namehtml = "<p>Enter Name</p>";
-    this.alertStyle = 'weakPwd';
-  }
-  else{
-    this.Namehtml = "";
-  }
-}
-
-checkPhone(){
-  const user = {
-    phone: this.phone.trim()
-  }
-  if(!this.validateService.validatePhone(user.phone)){
-    this.Phonehtml = "Enter Valid Phone Number";
-  }
-  else{
-    this.Phonehtml = "";
-  }
-}
-
-checkEmail(){
-  const user = {
-    email: this.email.trim()
-  }
-  if(!this.validateService.validateEmail(user.email)){
-    this.Emailhtml = "<p>Enter Valid Email</p>";
-    this.alertStyle = 'weakPwd';
-  }
-  else{
-    this.Emailhtml = "";
-  }
-}
-
 
 // Checking Password Strength
 checkstrength(){
@@ -143,18 +104,6 @@ if(this.validateService.isPassword(user.password)){
   this.toastr.error('Please Fill Required Fields');
   return false;
 }
-// Validate Number
-if(!this.validateService.validatePhone(user)){
-  this.toastr.error('Please Enter Correct Number');
-  return false;
-}
-
-// validate email
-if(!this.validateService.validateEmail(user.email)){
-  this.toastr.error('Please use Valid Email');
-    return false;
-}
-
 
 
 // retype password
