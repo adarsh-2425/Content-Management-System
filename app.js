@@ -59,7 +59,9 @@ app.use(express.static(`./public`));
 
 // Index Route
 app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname + './public/index.html'));
+    //Heroku/Express: "Not Found" When Attempting To Access A Sub-Route (On Refresh)
+    //https://stackoverflow.com/questions/52652412/heroku-express-not-found-when-attempting-to-access-a-sub-route-on-refresh
+    res.sendFile(path.join(__dirname + '/app./public/index.html'));
     });
 
 // Start Server
