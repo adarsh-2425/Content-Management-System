@@ -37,11 +37,10 @@
   <i class="likeicon fa-border-color fa-solid fa-heart fa-xl" class="{{like? 'liked' : 'disliked'}}" style="cursor: pointer;" (click)="likeToggle(content)"></i>
 </abbr>
 </div> -->
-<div class="button" *ngIf="authService.Admin() || authService.superAdmin()">
-        <button class="btn btn-primary" (click)="updateContent(content)" style="cursor:pointer" > Update</button>
-            <button class="btn btn-danger"  (click)="delete(content)" style="cursor:pointer" > Delete</button>
-          </div>
-        <div class="card-footer bg-transparent border-success">
+        <button class="btn btn-primary" *ngIf="authService.Admin() || authService.superAdmin()" (click)="updateContent(content)" style="cursor:pointer" > Update</button>
+            <button class="btn btn-danger" *ngIf="authService.Admin() || authService.superAdmin()" (click)="delete(content)" style="cursor:pointer" > Delete</button>
+        
+            <div class="card-footer bg-transparent border-success">
             <p>Written By : {{content.authorName}}</p>
             <p>Created At : {{content.createdAt}}</p> 
         </div>

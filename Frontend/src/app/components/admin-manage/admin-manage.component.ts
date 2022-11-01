@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
 import {MatDialog} from '@angular/material/dialog';
 import { PromoteDialogComponent } from 'src/app/dialogs/promote-dialog/promote-dialog.component';
-import { Router } from '@angular/router';
 import { DeleteuserDialogComponent } from 'src/app/dialogs/deleteuser-dialog/deleteuser-dialog.component';
-
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-admin-manage',
   templateUrl: './admin-manage.component.html',
@@ -18,6 +17,7 @@ export class AdminManageComponent implements OnInit {
   constructor(
     private userService: UsersService,
     public dialog: MatDialog,
+    public authService:AuthService
     ) { }
 
   ngOnInit(): void {

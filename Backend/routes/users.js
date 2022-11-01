@@ -32,7 +32,9 @@ router.post('/register', (req,res,next)=>{
 
 //Show list of users
 router.get('/userlist',function(req,res){
-    User.find()
+    // Find all except one in mongodb
+    // Use $ne for one user db.user.find( {_id:{$ne:"5848e9ecaec0f31372816a26"} })
+    User.find({ _id: { $ne: "634ce3f083c2d80488f65db1"} })
                     .then(function(users){
                         res.send(users);
                     });   

@@ -5,7 +5,8 @@ const cors =require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database')
-var session = require('express-session');
+// var session = require('express-session');
+var session = require('cookie-session');
 
 // Connect to Database
 mongoose.connect(config.database);
@@ -49,9 +50,9 @@ app.use(passport.session());
 
 require('./config/passport')(passport);
 
-app.use('/api/users', users);
-app.use('/api/contents', contents);
-app.use('/api/categories', categories);
+app.use('/users', users);
+app.use('/contents', contents);
+app.use('/categories', categories);
 
 // Set Static Folder
 app.use(express.static(`./public`));

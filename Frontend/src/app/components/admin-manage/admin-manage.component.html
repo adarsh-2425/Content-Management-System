@@ -16,8 +16,8 @@
                   <td>{{ user.firstName + " " + user.lastName}}</td>
                   <td>{{ user.role }}</td>
                   <td>
-                    <button class="btn btn-success" style="cursor:pointer" (click)="openDialog(user)"  style="margin-left: 20px;"> Promote</button>
-                    <button class="btn btn-danger" style="cursor:pointer" (click)="deleteDialog(user)" >Delete</button>
+                    <button class="btn btn-success" *ngIf="authService.superAdmin()" style="cursor:pointer" (click)="openDialog(user)"  style="margin-left: 20px;"> Promote</button>
+                    <button class="btn btn-danger"  style="cursor:pointer" (click)="deleteDialog(user)" >Delete</button>
                 </tr>              
           </tbody>
           </table>
