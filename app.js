@@ -50,9 +50,9 @@ app.use(passport.session());
 
 require('./config/passport')(passport);
 
-app.use('/users', users);
-app.use('/contents', contents);
-app.use('/categories', categories);
+app.use('/api/users', users);
+app.use('/api/contents', contents);
+app.use('/api/categories', categories);
 
 // Set Static Folder
 app.use(express.static(`./public`));
