@@ -68,8 +68,7 @@ checkPhone(){
     phone: this.phone.trim()
   }
   if(!this.validateService.validatePhone(user.phone)){
-    this.Phonehtml = "<p>Enter Phone Number</p>";
-    this.alertStyle = 'weakPwd';
+    this.Phonehtml = "Enter Valid Phone Number";
   }
   else{
     this.Phonehtml = "";
