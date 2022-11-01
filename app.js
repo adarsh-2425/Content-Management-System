@@ -63,6 +63,6 @@ app.get('/*', function(req, res) {
     });
 
 // Start Server
-app.listen(port, ()=>{
-    console.log(`Server Started on port ${port}`);
+app.listen(process.env.PORT || 3000, function(){
+    console.log("server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
