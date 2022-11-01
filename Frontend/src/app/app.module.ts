@@ -23,7 +23,6 @@ import { AuthGuard } from './services/auth.guard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AdminManageComponent } from './components/admin-manage/admin-manage.component';
-import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { PostcontentComponent } from './components/postcontent/postcontent.component';
 import { UpdateComponent } from './components/update/update.component';
 import { CategoryComponent } from './components/category/category.component';
@@ -37,6 +36,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import { FooterComponent } from './components/footer/footer.component';
 import { PromoteDialogComponent } from './dialogs/promote-dialog/promote-dialog.component';
 import { ViewComponent } from './components/view/view.component';
+import { DeleteuserDialogComponent } from './dialogs/deleteuser-dialog/deleteuser-dialog.component';
 
 @NgModule({
   declarations: [
@@ -48,14 +48,14 @@ import { ViewComponent } from './components/view/view.component';
     ProfileComponent,
     DashboardComponent,
     AdminManageComponent,
-    EditUserComponent,
     PostcontentComponent,
     UpdateComponent,
     CategoryComponent,
     CategoryupdateComponent,
     FooterComponent,
     PromoteDialogComponent,
-    ViewComponent
+    ViewComponent,
+    DeleteuserDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +85,8 @@ import { ViewComponent } from './components/view/view.component';
     ContentService,
     CategoryService,
     CategoryupdateComponent,
-    PromoteDialogComponent
+    PromoteDialogComponent,
+    DeleteuserDialogComponent
   ],
   bootstrap: [AppComponent]
 })

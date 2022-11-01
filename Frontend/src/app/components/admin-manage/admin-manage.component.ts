@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
-import { ToastrService } from 'ngx-toastr';
 import {MatDialog} from '@angular/material/dialog';
 import { PromoteDialogComponent } from 'src/app/dialogs/promote-dialog/promote-dialog.component';
 import { Router } from '@angular/router';
+import { DeleteuserDialogComponent } from 'src/app/dialogs/deleteuser-dialog/deleteuser-dialog.component';
 
 @Component({
   selector: 'app-admin-manage',
@@ -16,10 +16,8 @@ export class AdminManageComponent implements OnInit {
 
 
   constructor(
-    private router:Router,
     private userService: UsersService,
     public dialog: MatDialog,
-    private PromoteDialogComponent:PromoteDialogComponent
     ) { }
 
   ngOnInit(): void {
@@ -27,6 +25,8 @@ export class AdminManageComponent implements OnInit {
       this.users = JSON.parse(JSON.stringify(data));
     }); 
   }
+
+  // Promote User Dialog
   openDialog(user:any): void {
     localStorage.setItem("editUserId", user._id.toString());
     let dialogRef = this.dialog.open(PromoteDialogComponent);
@@ -39,6 +39,17 @@ export class AdminManageComponent implements OnInit {
     .subscribe(() => this.ngOnInit());
   }
 
+  // Delete User
+ deleteDialog(user:any):void {
+  localStorage.setItem("deleteUserId", user._id.toString());
+  localStorage.setItem("deleteUserName", user.firstName.toString());
+  let dialogRef = this.dialog.open(DeleteuserDialogComponent);
+
+ 
+  // Refresh page after dialog close angular
+  dialogRef.afterClosed()
+  .subscribe(() => this.ngOnInit());
+ }
   
 
   

@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http'
 })
 export class UsersService {
 
+  server_address= "http://localhost:3000";
+
   constructor(private http:HttpClient) { }
 
   getUsers(){
@@ -25,6 +27,11 @@ export class UsersService {
     console.log('User update')
     return this.http.put(`http://localhost:3000/users/updateuser/`,user)
     .subscribe(data =>{console.log(data)})
+  }
+
+  // Delete User
+  deleteUser(id:any){
+    return this.http.delete(`${this.server_address}/users/delete/`+id)
   }
 
 }

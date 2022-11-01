@@ -5,6 +5,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const { find } = require('../models/user');
+const { addContent } = require('../models/content');
 
 //REGISTER
 router.post('/register', (req,res,next)=>{
@@ -48,6 +49,15 @@ router.put('/updateuser',(req,res)=>{
        res.send();
    })
  })
+
+//  Delete User
+router.delete('/delete/:id', (req,res)=>{
+    id = req.params.id;
+    User.findByIdAndDelete({"_id":id})
+    .then(()=>{
+        res.send();
+    })
+});
 
 //  Search User based on id
  router.get('/:id',  (req, res) => {

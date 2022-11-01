@@ -95,7 +95,6 @@ router.delete('/delete/:id',(req,res)=>{
     id = req.params.id;
     Content.findByIdAndDelete({"_id":id})
     .then(()=>{
-        console.log('Deletion success')
         res.send();
     })
 });

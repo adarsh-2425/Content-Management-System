@@ -1,0 +1,6 @@
+<h2 matDialogTitle class="title">Delete user <strong>{{name}}</strong>?</h2>
+
+<mat-dialog-actions>
+    <button class="btn btn-light cancel"   [mat-dialog-close]="true">Cancel</button>
+    <button class="btn btn-danger" (click)="delete()" [mat-dialog-close]="true">Delete</button>
+</mat-dialog-actions>
