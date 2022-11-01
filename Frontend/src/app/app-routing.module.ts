@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminManageComponent } from './components/admin-manage/admin-manage.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PostcontentComponent } from './components/postcontent/postcontent.component';
@@ -38,11 +37,6 @@ const routes: Routes = [
   path : 'adminManage', 
   canActivate: [AuthGuard],
   component : AdminManageComponent
-  },
-  {
-  path : 'edituser', 
-  canActivate: [AuthGuard],
-  component : EditUserComponent
   },
   {
   path : 'postcontent', 
