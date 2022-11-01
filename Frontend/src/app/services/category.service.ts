@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 export class CategoryService {
 
   //server_address= "http://localhost:3000";
-server_address= "api";
+  server_address= "http://localhost:3000";
+
 
   constructor(
     private http:HttpClient

@@ -1,3 +1,10 @@
+/* Boostrap 4 Navbar Collapse Menu Right Align */
+/* https://stackoverflow.com/questions/47518911/boostrap-4-navbar-collapse-menu-right-align */
+#navbarNavAltMarkup{
+    text-align: right;
+    margin-left: 1em;
+    margin-top: 1em;
+}
 .logout:hover{
     color: red;
 }

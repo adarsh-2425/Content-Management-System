@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class AuthService {
 
  //server_address= "http://localhost:3000";
-server_address= "api";
+server_address= "http://localhost:3000";
 
   authtoken: any;
   user: any;
