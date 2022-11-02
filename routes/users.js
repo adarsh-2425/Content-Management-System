@@ -50,7 +50,32 @@ router.put('/updateuser',(req,res)=>{
    .then(function(){
        res.send();
    })
- })
+ });
+
+//  Edit Profile
+router.put('/editprofile',(req,res)=>{
+
+        id=req.body._id,
+        firstName= req.body.firstName,
+        lastName=req.body.lastName,
+        gender= req.body.gender,
+        email= req.body.email,
+        about= req.body.about,
+        phone=req.body.phone,
+        username= req.body.username,
+   User.findByIdAndUpdate({"_id":id},
+                                {$set:{
+                                    "firstName": firstName,
+                                    "lastName": lastName,
+                                    'gender': gender,
+                                    'email': email,
+                                    'about':about,
+                                    'phone': phone,
+                                    'username': username}})
+   .then(function(){
+       res.send();
+   })
+ });
 
 //  Delete User
 router.delete('/delete/:id', (req,res)=>{
@@ -60,15 +85,6 @@ router.delete('/delete/:id', (req,res)=>{
         res.send();
     })
 });
-
-//  Search User based on id
- router.get('/:id',  (req, res) => {
-      
-    User.findById(req.params.id)
-      .then((user)=>{
-          res.send(user);
-      });
-  })
 
 //  Search user based on username
 router.get('/userpost/:username', (req,res)=>{
@@ -80,6 +96,17 @@ router.get('/userpost/:username', (req,res)=>{
         res.send(users)
     });
 }) ;
+
+//  Search User based on id
+ router.get('/:id',  (req, res) => {
+      
+    User.findById(req.params.id)
+      .then((user)=>{
+          res.send(user);
+      });
+  })
+
+
 
 
 // Authenticate
@@ -108,7 +135,7 @@ router.post('/authenticate', (req,res,next)=>{
                         name: user.firstName + " " + user.lastName,
                         username: user.username,
                         email: user.email,
-                        role: user.role
+                        role: user.role,
                     }
                 });
             }
