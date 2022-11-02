@@ -12,6 +12,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { AuthGuard } from './services/auth.guard';
 import { AdminGuard } from './services/admin.guard';
 import { ViewComponent } from './components/view/view.component';
+import { EdituserComponent } from './components/edituser/edituser.component';
 
 const routes: Routes = [
   {
@@ -59,7 +60,13 @@ const routes: Routes = [
     // https://codecraft.tv/courses/angular/routing/router-guards/
     canActivate: [AuthGuard, AdminGuard],
     component : CategoryComponent
+  },
+  {
+    path: 'edituser',
+    canActivate : [AuthGuard],
+    component : EdituserComponent
   }
+  
 ];
 
 @NgModule({

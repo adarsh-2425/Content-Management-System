@@ -7,13 +7,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class AuthService {
 
- //server_address= "http://localhost:3000";
-server_address= "http://localhost:3000";
+ server_address= "api";
+//server_address= "http://localhost:3000";
 
   authtoken: any;
   user: any;
   role: any;
   username:any;
+  id:any;
  
   constructor(private http:HttpClient) { }
 
@@ -42,11 +43,13 @@ server_address= "http://localhost:3000";
     return this.http.get(`${this.server_address}/users/profile`, {headers: headers});
   }
 
-  storeUserData(token:any, user:any, role:any, username:any){
+  storeUserData(token:any, user:any, role:any, username:any, id:any){
     localStorage.setItem('id_token', token);
+    localStorage.setItem('id', user.id);
     localStorage.setItem('user', JSON.stringify(user));
     localStorage.setItem('role', user.role);
     localStorage.setItem('username', user.username);
+    this.id = id;
     this.authtoken  = token;
     this.user = user;
     this.role = role;
@@ -80,9 +83,6 @@ server_address= "http://localhost:3000";
   }
 
   logout(){
-    this.authtoken = null;
-    this.user = null;
-    this.role = null;
     localStorage.clear();
   }
 

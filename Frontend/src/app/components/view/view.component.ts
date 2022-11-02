@@ -19,7 +19,7 @@ export class ViewComponent implements OnInit {
   }
 
   user = {
-    username: '',
+    username:'',
     email:''
   }
 
@@ -33,15 +33,6 @@ export class ViewComponent implements OnInit {
     const viewContentId = localStorage.getItem('viewContentId');
     this.ContentService.getContent(viewContentId).subscribe((data)=>{
      this.contents = JSON.parse(JSON.stringify(data));
-     console.log(this.contents);
-    })
-
-    // Retrieve User Details
-    const viewAuthorId = localStorage.getItem('viewAuthorId');
-    this.UsersService.getUserByPost(viewAuthorId).subscribe((data)=>{
-      this.user = JSON.parse(JSON.stringify(data));
-      console.log(this.user);
-      
     })
   }
 

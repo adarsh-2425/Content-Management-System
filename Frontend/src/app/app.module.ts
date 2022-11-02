@@ -37,6 +37,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PromoteDialogComponent } from './dialogs/promote-dialog/promote-dialog.component';
 import { ViewComponent } from './components/view/view.component';
 import { DeleteuserDialogComponent } from './dialogs/deleteuser-dialog/deleteuser-dialog.component';
+import { EdituserComponent } from './components/edituser/edituser.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { DeleteuserDialogComponent } from './dialogs/deleteuser-dialog/deleteuse
     FooterComponent,
     PromoteDialogComponent,
     ViewComponent,
-    DeleteuserDialogComponent
+    DeleteuserDialogComponent,
+    EdituserComponent
   ],
   imports: [
     BrowserModule,

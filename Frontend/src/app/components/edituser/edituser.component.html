@@ -1,0 +1,61 @@
+<section>
+    <div class='card'>
+        <form (ngSubmit)="editUser()">
+    <div class='card-header'>
+     Update Book
+    </div>
+    <div class='card-body'>            
+      <div class='table-responsive'>
+        <table class='table'>       
+        
+          <tbody>  
+              <tr>
+                  <td> <label>First Name</label></td>
+                  <td><input type="text" name="firstName" [(ngModel)]="user.firstName"/></td>                  
+                </tr>   
+                <tr>
+                    <td><label>Last  Name</label></td>
+                    <td><input type="text" name="lastName" [(ngModel)]="user.lastName"/></td>                  
+                  </tr>  
+                  <tr>
+                    <td><label>Gender</label></td>
+                    <td>
+                        <select name="gender" [(ngModel)]="user.gender" id="gender" >
+                            <option value="" selected>Select Your Gender...</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </td>                  
+                  </tr>  
+                  <tr>
+                    <td><label>About</label></td>
+                    <td><input type="text" name="about" [(ngModel)]="user.about"/></td>                  
+                  </tr>    
+                  <tr>
+                    <td><label>Phone</label></td>
+                    <td><input type="text" name="phone" [(ngModel)]="user.phone"/></td>                  
+                  </tr>
+                  <tr>
+                    <td><label>Email</label></td>
+                    <td><input type="text" name="email" [(ngModel)]="user.email"/></td>                  
+                  </tr>
+                  <tr>
+                    <td><label>Username</label></td>
+                    <td><input type="text" name="username" [(ngModel)]="user.username"/></td>                  
+                  </tr>
+                    
+                  <tr>
+                    <td></td>
+                    <td><input class="btn btn-info" type="submit" value="Submit" /></td>                  
+                  </tr>             
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </form>
+
+    
+    </div>
+    
+</section>

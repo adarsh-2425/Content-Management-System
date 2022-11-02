@@ -1,8 +1,10 @@
 <div class="container">
-  <h3 id="yourposts">Your Posts</h3>
     <div class="row">
-  <div class="col-lg-4 mb-4 d-flex align-items-stretch" *ngFor='let content of contents'>
-      <div class="card" >
+
+  <div class="col-8 col-lg-7 col-sm-6" >
+    <h3 id="yourposts">Your Posts</h3>
+
+    <div class="card mb-4  align-items-stretch" *ngFor='let content of contents' >
           <img class="card-img-top img-fluid img-thumbnail" [src]="content.image" alt="Card image cap">
           <div class="card-body">
               <h5 class="card-title">{{content.title}}</h5>
@@ -22,6 +24,24 @@
           </div>
         </div>
       </div>
+
+        <div class="col-4 col-lg-5 col-sm-6">
+          <div class="card bg-light profilecenter">
+              <div class="card-body">
+            <h3  class="card-title text-center font-weight-bold">{{users.username}}</h3>
+            <div class="image">
+              <img class="profilepic text-center" src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg" alt="">
+
+            </div>
+          <div class="about text-center">
+            <p>About :  {{users.about}}</p>
+          </div>  
+          <div class="editbutton text-center">
+            <button (click)="editUser(users)" class="btn btn-info">Edit Profile</button>
+          </div> 
+          </div>
+          </div>
+        </div>
+      </div>
     </div>
-    </div> 
   

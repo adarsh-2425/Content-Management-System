@@ -3,40 +3,21 @@
 
     <div class="row">
         <!-- Contents -->
-        <div class="col-lg-9 col-md-4 col-sm-12">
+        <div class="col-lg-12 col-md-12 col-sm-12">
     <div class="card" >
-        <div class="card-header">
-        </div>
-        <div >
-          <img class="card-img-top img-fluid img-thumbnail contentimage" [src]="contents.image" alt="Card image cap">
-        </div>
           <div class="card-body">
-              <h5 class="card-title">{{contents.title}}</h5>
-              <p class="card-text contentpost">{{contents.post}} </p>
-              
-              <mat-chip-list>
+              <h1 class="card-title text-center">{{contents.title}}</h1>
+              <mat-chip-list class="text-center mat">
                 <mat-chip  color="accent" selected>{{contents.category}}</mat-chip>
               </mat-chip-list>
-          </div>
-        
-          
-          <div class="card-footer bg-transparent border-success">
-              <p>Written By : {{contents.authorName}}</p>
-              <p>Created At : {{contents.createdAt}}</p> 
+              <p>Written By : <strong>{{contents.authorName}}</strong></p>
+              <p>Created At : <strong>{{contents.createdAt}}</strong></p>
+          <img class="img-fluid l contentimage" [src]="contents.image" alt="Card image cap">
+              <p class="card-text contentpost">{{contents.post}} </p>
           </div>
         </div>
       </div>
-      <!-- Author -->
-      <div class="col-lg-3 col-md-4 col-sm-12">
-        <div class="card" >
-          <img class="card-img-top profilepic"  alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">{{user.username}}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">{{user.email}}</a>
-          </div>
-        </div>
-      </div>
+      
   
   
   </div>

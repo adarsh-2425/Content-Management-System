@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentService } from 'src/app/services/content.service';
+import { UsersService } from 'src/app/services/users.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
@@ -13,11 +14,19 @@ export class ProfileComponent implements OnInit {
   contents:any[] | undefined;
   content_id:string = '';
   username:string = '';
+  users = {
+    username:'',
+    about:'',
+    id:''
+  }
+
   
+
 
 
   constructor(
     private ContentService:ContentService,
+    private UsersService: UsersService,
     private toastr:ToastrService,
     private router:Router
     ) { }
@@ -28,9 +37,21 @@ export class ProfileComponent implements OnInit {
     this.contents = JSON.parse(JSON.stringify(data))
     });
 
+    this.UsersService.getUserByPost(username).subscribe((data)=>{
+      this.users = JSON.parse(JSON.stringify(data))
+      console.log(this.users);
+      
+    })
+    
+
     localStorage.removeItem('editContentId');
 
   };
+  // Edit User
+  editUser(users:any){
+    localStorage.setItem("editUserId", users._id.toString());
+    this.router.navigate(['/edituser'])  
+  }
 
   updateContent(content:any){
     localStorage.setItem("editContentId", content._id.toString());

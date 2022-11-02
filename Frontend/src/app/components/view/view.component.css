@@ -1,7 +1,15 @@
-.contentimage{
-    width: 400px;
-    height:400px;
-}
+
 .row{
     margin-top: 2em;
+}
+p{
+    margin-top: 1em;
+}
+.contentpost{
+    text-align: center;
+    margin: 1em;
+    margin-top: 2em;
+}
+.mat{
+    margin-top: 1em;
 }

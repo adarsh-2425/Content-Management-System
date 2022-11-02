@@ -4,6 +4,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { PromoteDialogComponent } from 'src/app/dialogs/promote-dialog/promote-dialog.component';
 import { DeleteuserDialogComponent } from 'src/app/dialogs/deleteuser-dialog/deleteuser-dialog.component';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-admin-manage',
   templateUrl: './admin-manage.component.html',
@@ -17,13 +18,20 @@ export class AdminManageComponent implements OnInit {
   constructor(
     private userService: UsersService,
     public dialog: MatDialog,
-    public authService:AuthService
+    public authService:AuthService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
     this.userService.getUsers().subscribe((data)=>{
       this.users = JSON.parse(JSON.stringify(data));
     }); 
+  }
+
+  // Edit User
+  editUser(user:any){
+    localStorage.setItem("editUserId", user._id.toString());
+    this.router.navigate(['/edituser'])
   }
 
   // Promote User Dialog
