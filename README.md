@@ -17,7 +17,7 @@ Authenticated user can read different categories created by the admin and posts 
 
 ## Screenshots
 
-![alt text](./Project Images/home.PNG)
+![Homepage](./Project Images/home.PNG)
 
 
 
