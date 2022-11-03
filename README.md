@@ -19,11 +19,11 @@ Authenticated user can read different categories created by the admin and posts 
 
 ![Home page](https://github.com/adarsh-2425/Content-Management-System/blob/a1aba79d3c68b38cf90a1021580b07ef544c95ee/Project%20Images/home.PNG)
 
-![HomePage](https://github.com/adarsh-2425/Content-Management-System/blob/a1aba79d3c68b38cf90a1021580b07ef544c95ee/Project%20Images/home.PNG)
+![HomePage](https://github.com/adarsh-2425/Content-Management-System/blob/533b7a766e54d2d07b3b984b600afe7fc13a534c/Project%20Images/home%202.PNG)
 
-![Login Page](https://github.com/adarsh-2425/Content-Management-System/blob/a1aba79d3c68b38cf90a1021580b07ef544c95ee/Project%20Images/home.PNG)
+![Login Page](https://github.com/adarsh-2425/Content-Management-System/blob/533b7a766e54d2d07b3b984b600afe7fc13a534c/Project%20Images/login.PNG)
 
-![Admin can Promote user to admin, edit user details and delete user](https://github.com/adarsh-2425/Content-Management-System/blob/a1aba79d3c68b38cf90a1021580b07ef544c95ee/Project%20Images/home.PNG)
+![Admin can Promote user to admin, edit user details and delete user](https://github.com/adarsh-2425/Content-Management-System/blob/533b7a766e54d2d07b3b984b600afe7fc13a534c/Project%20Images/manage%20user%20by%20Admin.PNG)
 
 
 
