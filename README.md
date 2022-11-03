@@ -23,7 +23,8 @@ Authenticated user can read different categories created by the admin and posts 
 
 ![Login Page](https://github.com/adarsh-2425/Content-Management-System/blob/533b7a766e54d2d07b3b984b600afe7fc13a534c/Project%20Images/login.PNG)
 
-![Admin can Promote user to admin, edit user details and delete user](https://github.com/adarsh-2425/Content-Management-System/blob/533b7a766e54d2d07b3b984b600afe7fc13a534c/Project%20Images/manage%20user%20by%20Admin.PNG)
+Super Admin can Promote user to admin, edit, update and delete user details.
+![Super Admin can Promote user to admin, edit user details and delete user](https://github.com/adarsh-2425/Content-Management-System/blob/533b7a766e54d2d07b3b984b600afe7fc13a534c/Project%20Images/manage%20user%20by%20Admin.PNG)
 
 
 
