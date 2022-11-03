@@ -17,7 +17,7 @@ Authenticated user can read different categories created by the admin and posts 
 
 ## Screenshots
 
-![Homepage](Project Images\home.PNG)
+![Homepage](https://miro.medium.com/max/1400/1*zBmPieDd4eXM2ZYlNm2sXg.png)
 
 
 
