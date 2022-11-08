@@ -54,7 +54,7 @@ app.use('/api/users', users);
 app.use('/api/contents', contents);
 app.use('/api/categories', categories);
 
-// Set Static Folder
+// Set Static Folderr
 app.use(express.static(`./public`));
 
 // Index Route
