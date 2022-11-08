@@ -2,11 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { slideInOut } from 'src/app/animations/animations';
+import { fade } from 'src/app/animations/fade';
 
 @Component({
   selector: 'app-edituser',
   templateUrl: './edituser.component.html',
-  styleUrls: ['./edituser.component.css']
+  styleUrls: ['./edituser.component.css'],
+  animations: [
+    slideInOut,
+    fade
+  ]
 })
 export class EdituserComponent implements OnInit {
   user={
@@ -15,8 +21,7 @@ export class EdituserComponent implements OnInit {
     about:'',
     gender:'',
     email:'',
-    phone:'',
-    username:''
+    phone:''
   }
 
   constructor(

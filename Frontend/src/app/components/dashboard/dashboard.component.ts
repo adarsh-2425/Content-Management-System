@@ -4,11 +4,17 @@ import { CategoryService } from 'src/app/services/category.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { slideInOut } from 'src/app/animations/animations';
+import { fade } from 'src/app/animations/fade';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
+  animations: [
+    slideInOut,
+    fade
+  ]
 })
 export class DashboardComponent implements OnInit {
 
